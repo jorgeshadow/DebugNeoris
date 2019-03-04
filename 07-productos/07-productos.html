@@ -1,0 +1,2217 @@
+<html lang="es">
+
+<head>
+    <title>productos</title>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=1024">
+    <style>
+       
+        @font-face {
+            font-family: 'Roboto', sans-serif;
+            src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+        }
+  
+
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        * {
+            margin: 0;
+            /*text-rendering: optimizeLegibility;*/
+        }
+
+        #mc5 h1,
+        #mc5 h2,
+        #mc5 h3 {
+            font-weight: 400;
+        }
+
+        body,
+        #website {
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background: #ffffff;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            /*-webkit-font-smoothing: antialiased;*/
+            -webkit-overflow-scrolling: touch;
+        }
+
+        div,
+        span {
+            max-height: 100000px;
+        }
+
+        .testoc {
+            line-height: 1.2;
+            vertical-align: top;
+        }
+
+        body.flazioNoScroll {
+            overflow: hidden !important;
+        }
+
+        body *::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        body *::-webkit-scrollbar-thumb {
+            border-radius: 15px;
+            background: rgba(153, 156, 161, 0.8);
+        }
+
+        body *::-webkit-scrollbar-track {
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .yscrollbar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            background: red;
+            z-index: 30000;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            /* Background */
+            background: rgba(0, 0, 0, 0.2);
+            /* Border bottom light */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            /* Inner top shadow */
+            -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .yscroller {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+
+        .yscroller:hover {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+
+        .yscroller:active {
+            background: #003399;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+    </style>
+ 
+
+
+    <style type="text/css">
+        .hoverimage_opacityIn img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityIn:hover img,
+        .hoverimage_opacityOut img {
+            opacity: 1;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityOut:hover img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn:hover img,
+        .hoverimage_zoomOut img {
+            transform: scale(1.3);
+            -webkit-transform: scale(1.3);
+            -moz-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            -o-transform: scale(1.3);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomOut:hover img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn:hover img,
+        .hoverimage_rotateZoomOut img {
+            transform: scale(1.3) rotate(15deg);
+            -webkit-transform: scale(1.3) rotate(15deg);
+            -moz-transform: scale(1.3) rotate(15deg);
+            -ms-transform: scale(1.3) rotate(15deg);
+            -o-transform: scale(1.3) rotate(15deg);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomOut:hover img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn:hover img,
+        .hoverimage_greyscaleOut img {
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleOut:hover img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn:hover img,
+        .hoverimage_blurOut img {
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -ms-filter: blur(2px);
+            -o-filter: blur(2px);
+            filter: blur(2px);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurOut:hover img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn:hover img,
+        .hoverimage_blurGreyscaleOut img {
+            -webkit-filter: blur(2px) grayscale(100%);
+            -moz-filter: blur(2px) grayscale(100%);
+            -ms-filter: blur(2px) grayscale(100%);
+            -o-filter: blur(2px) grayscale(100%);
+            filter: blur(2px) grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleOut:hover img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+    </style>
+    <style type="text/css">
+        .comp_ombrasemplice {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 4px 12px -6px;
+            z-index: -1;
+        }
+
+        .comp_ombradestra,
+        .comp_ombradestrasinistra,
+        .comp_ombrasinistra,
+        .comp_ombrataglio {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            height: 20px;
+            width: 100%;
+            overflow: hidden
+        }
+
+        .comp_ombradestra:after,
+        .comp_ombradestrasinistra:after,
+        .comp_ombradestrasinistra:before,
+        .comp_ombrasinistra:before {
+            bottom: 30px;
+            width: calc(50% - 10px);
+            max-width: 300px;
+            box-shadow: 0 15px 10px;
+            position: absolute;
+            height: 20px;
+            content: "";
+            z-index: -1
+        }
+
+        .comp_ombradestrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestrasinistra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrataglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            height: 20px;
+            bottom: 20px;
+            left: 15px;
+            right: 15px;
+            border-radius: 100px/10px
+        }
+
+        .comp_effettoglossy,
+        .comp_ombraannullata,
+        .comp_ombrainterna,
+        .comp_ombralunga {
+            width: 100%;
+            height: 100%;
+            position: absolute
+        }
+
+        .comp_ombralunga {
+            bottom: 0;
+            box-shadow: 1px 1px, 2px 2px, 3px 3px, 4px 4px, 5px 5px, 6px 6px, 7px 7px, 8px 8px, 9px 9px, 10px 10px, 11px 11px, 12px 12px, 13px 13px, 14px 14px, 15px 15px, 16px 16px, 17px 17px, 18px 18px, 19px 19px, 20px 20px, 21px 21px, 22px 22px, 23px 23px, 24px 24px, 25px 25px, 26px 26px, 27px 27px, 28px 28px, 29px 29px, 30px 30px, 31px 31px, 32px 32px, 33px 33px, 34px 34px, 35px 35px, 36px 36px, 37px 37px, 38px 38px, 39px 39px, 40px 40px, 41px 41px, 42px 42px, 43px 43px, 44px 44px, 45px 45px, 46px 46px, 47px 47px, 48px 48px, 49px 49px, 50px 50px, 51px 51px, 52px 52px, 53px 53px, 54px 54px, 55px 55px, 56px 56px, 57px 57px, 58px 58px, 59px 59px, 60px 60px
+        }
+
+        .comp_ombrainterna {
+            bottom: 0;
+            box-shadow: inset 0 0 10px
+        }
+
+        .comp_effettoglossy {
+            bottom: 0;
+            box-shadow: 0 1px 4px, inset 0 0 40px
+        }
+
+        .comp_doppiotaglio:after,
+        .comp_doppiotaglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglio:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_doppiotaglioverticale:after,
+        .comp_doppiotaglioverticale:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 10px;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglioverticale:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_ombraannullata {
+            bottom: 0;
+            box-shadow: 0 4px 12px -6px;
+            left: 0;
+            border-radius: inherit
+        }
+
+        .comp_ombraannullata:after,
+        .comp_ombraannullata:before {
+            display: none !important
+        }
+
+        .shadow_tendina {
+            width: 230px;
+            height: 134px;
+            transform: scale(.3);
+            transform-origin: top left;
+            background: #1287cb;
+            color: rgba(0, 0, 0, .4);
+            position: absolute;
+            margin-bottom: 50px
+        }
+
+        .shadow_tendina.active {
+            background: #0ea7ff
+        }
+    </style>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto', sans-serif;
+            src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+        }
+    </style>
+    
+</head>
+
+<body oncontextmenu="return false" cz-shortcut-listen="true" style="height: 4455px; overflow: hidden scroll; top: 0px;">
+    <div id="website" style="overflow: hidden;">
+        <div id="aCC5" style="position:absolute; z-index:100; left: 50%; top: 0;">
+            <div id="mc5" style="position:absolute; z-index:150; left: -500px; top: 0px;">
+                <div id="18"
+                    style="position: absolute; top: 4021px; left: -310px; z-index: 0; transform: translate3d(0px, 0px, 0px); display: block; height: 434px;">
+                     
+                </div>
+                 
+                 
+                
+                 
+                 
+                 
+                <div id="32"
+                    style="position: absolute; top: 4285px; left: -88px; z-index: 14; transform: translate3d(0px, 0px, 0px); display: block; height: 34px;">
+                    <div id="immaginesingola_32" style="position:absolute;width:34px;height:34px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 34px; height: 34px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_32">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:34px;height:34px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/32/f1/39.png?no=1550681909">
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="37"
+                    style="position: absolute; top: 199px; left: -162px; z-index: 16; transform: translate3d(0px, 0px, 0px); display: block; height: 71px;">
+                    <div id="testo_37" class="testoc"
+                        style="width: 322px; height: 71px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);">Productos</span><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="38"
+                    style="position: absolute; top: 255px; left: 861px; z-index: 17; transform: translate3d(0px, 0px, 0px); display: block; height: 43px;">
+                    <div id="immaginesingola_38" style="position:absolute;width:301px;height:43px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 43px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_38">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:43px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/38/f1/52.png?no=39627333">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="39"
+                    style="position: absolute; top: 267px; left: 895px; z-index: 18; transform: translate3d(0px, 0px, 0px); display: block; height: 46px;">
+                     <div>
+                            <p style="text-align: left;">
+                                    <img src="https://dabuttonfactory.com/button.png?t=SOLICITA+M%C3%81S+INFORMACI%C3%93N&f=Roboto-Bold&ts=16&tc=fff&hp=22&vp=8&c=20&bgt=unicolored&bgc=f90";
+                                </p>
+                        </div> 
+                </div>
+                 
+                 
+                 
+                
+                
+                <div id="273"
+                    style="position: absolute; top: 12px; left: -165px; z-index: 25; transform: translate3d(0px, 0px, 0px); display: block; height: 34px;">
+                    <div id="immaginesingola_273" style="position:absolute;width:239px;height:34px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 239px; height: 34px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_273">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:239px;height:34px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/273/f1/313.png?no=39627333">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="275"
+                    style="position: absolute; top: 966px; left: -316px; z-index: 26; transform: translate3d(0px, 0px, 0px); display: block; height: 1025px;">
+                    <div id="immaginesingola_275" style="position:absolute;width:1635px;height:1025px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 1635px; height: 1025px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_275">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:1635px;height:1025px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/275/f1/316.png?no=1550681884">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="276"
+                    style="position: absolute; top: 3152px; left: -316px; z-index: 27; transform: translate3d(0px, 0px, 0px); display: block; height: 873px;">
+                    <div id="immaginesingola_276" style="position:absolute;width:1635px;height:873px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 1635px; height: 873px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_276">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:1635px;height:873px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/276/f1/317.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="277"
+                    style="position: absolute; top: 415px; left: -140px; z-index: 28; transform: translate3d(0px, 0px, 0px); display: block; height: 118px;">
+                    <div id="testo_277" class="testoc"
+                        style="width: 592px; height: 118px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">S</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">on
+                                    instrumentos emitidos por el Ministerio de Hacienda Dominicano con el fin de captar
+                                    recursos. Son emitidos a largo plazo y negociados en el mercado de valores, con pago
+                                    de intereses semestrales.</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="278"
+                    style="position: absolute; top: 382px; left: -157px; z-index: 29; transform: translate3d(0px, 0px, 0px); display: block; height: 46px;">
+                    <div id="testo_278" class="testoc"
+                        style="width: 207px; height: 46px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(0, 59, 121);"></span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Bonos de Hacienda
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="279"
+                    style="position: absolute; top: 586px; left: -140px; z-index: 30; transform: translate3d(0px, 0px, 0px); display: block; height: 98px;">
+                    <div id="testo_279" class="testoc"
+                        style="width: 569px; height: 98px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">E</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">stos
+                                    instrumentos son emitidos por el Banco Central de la República Dominicana. Pueden
+                                    ser a corto plazo (Letras) y a largo plazo (Bonos).</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="280"
+                    style="position: absolute; top: 554px; left: -157px; z-index: 31; transform: translate3d(0px, 0px, 0px); display: block; height: 46px;">
+                    <div id="testo_280" class="testoc"
+                        style="width: 337px; height: 46px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(0, 59, 121);"></span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Bonos &amp; Letras del Banco Central
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="281"
+                    style="position: absolute; top: 382px; left: 540px; z-index: 32; transform: translate3d(0px, 0px, 0px); display: block; height: 50px;">
+                    <div id="testo_281" class="testoc"
+                        style="width: 181px; height: 50px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(0, 59, 121);"></span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Forward Popular
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="282"
+                    style="position: absolute; top: 415px; left: 556px; z-index: 33; transform: translate3d(0px, 0px, 0px); display: block; height: 167px;">
+                    <div id="testo_282" class="testoc"
+                        style="width: 603px; height: 167px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">E</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">l
+                                    SBB es un contrato en el cual, el cliente e Inversiones Popular pactan la tasa y la
+                                    fecha cuando Inversiones Popular le recomprara el título valor que tiene como
+                                    subyacente el contrato. La tasa propuesta es anualizada y libre de impuestos y el
+                                    certificado no puede ser cancelado antes de su vencimiento.</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="283"
+                    style="position: absolute; top: 732px; left: -140px; z-index: 34; transform: translate3d(0px, 0px, 0px); display: block; height: 98px;">
+                    <div id="testo_283" class="testoc"
+                        style="width: 592px; height: 98px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">S</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">on
+                                    instrumentos emitidos por empresas privadas para captar recursos del mercado. Pueden
+                                    ser emitidos a corto plazo (Papeles Comerciales) o largo plazo (Bonos
+                                    Corporativos).</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="284"
+                    style="position: absolute; top: 699px; left: -157px; z-index: 35; transform: translate3d(0px, 0px, 0px); display: block; height: 50px;">
+                    <div id="testo_284" class="testoc"
+                        style="width: 429px; height: 50px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(0, 59, 121);"></span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Papeles Comerciales &amp; Bonos Corporativos
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="285"
+                    style="position: absolute; top: 602px; left: 540px; z-index: 36; transform: translate3d(0px, 0px, 0px); display: block; height: 46px;">
+                    <div id="testo_285" class="testoc"
+                        style="width: 313px; height: 46px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(0, 59, 121);"></span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Cuotas de Fondos de Inversion
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="286"
+                    style="position: absolute; top: 682px; left: 540px; z-index: 37; transform: translate3d(0px, 0px, 0px); display: block; height: 46px;">
+                    <div id="testo_286" class="testoc"
+                        style="width: 243px; height: 46px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(0, 59, 121);"></span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Valores de Fideicomiso
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="287"
+                    style="position: absolute; top: 1200px; left: 861px; z-index: 38; transform: translate3d(0px, 0px, 0px); display: block; height: 43px;">
+                    <div id="immaginesingola_287" style="position:absolute;width:301px;height:43px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 43px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_287">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:43px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/287/f1/328.png?no=1550681884">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="288"
+                    style="position: absolute; top: 1211px; left: 895px; z-index: 39; transform: translate3d(-40px, 0px, 0px); display: block; height: 46px;">
+                     <div>
+                            <p style="text-align: left;">
+                                <img src="https://dabuttonfactory.com/button.png?t=SOLICITA+M%C3%81S+INFORMACI%C3%93N&f=Roboto-Bold&ts=16&tc=fff&hp=22&vp=8&c=20&bgt=unicolored&bgc=f90";
+                            </p>
+                        </div> 
+                </div>
+                <div id="289"
+                    style="position: absolute; top: 1359px; left: -141px; z-index: 40; transform: translate3d(0px, 0px, 0px); display: block; height: 147px;">
+                    <div id="testo_289" class="testoc"
+                        style="width: 596px; height: 147px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">A</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">sesoramos
+                                    y acompañamos a nuestros clientes jurídicos cuando deciden financiarse a través del
+                                    mercado de valores. Conforme a las necesidades puntuales del cliente, procedemos a
+                                    emitir títulos valores y les ofrecemos el servicio de colocar dichos valores bajo la
+                                    modalidad que más les convengan. </span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="290"
+                    style="position: absolute; top: 1327px; left: -157px; z-index: 41; transform: translate3d(0px, 0px, 0px); display: block; height: 46px;">
+                    <div id="testo_290" class="testoc"
+                        style="width: 345px; height: 46px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(0, 59, 121);"></span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Estructuración de títulos de deuda
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="291"
+                    style="position: absolute; top: 1575px; left: -140px; z-index: 42; transform: translate3d(0px, 0px, 0px); display: block; height: 74px;">
+                    <div id="testo_291" class="testoc"
+                        style="width: 601px; height: 74px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">O</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">frecemos
+                                    el servicio la venta de títulos valores tanto a clientes retail como profesionales.
+                                </span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="292"
+                    style="position: absolute; top: 1516px; left: -157px; z-index: 43; transform: translate3d(0px, 0px, 0px); display: block; height: 70px;">
+                    <div id="testo_292" class="testoc"
+                        style="width: 515px; height: 70px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(0, 59, 121);"></span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Colocación de nuevas emisiones de títulos-valores
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    en el mercado de valores
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="293"
+                    style="position: absolute; top: 1327px; left: 540px; z-index: 44; transform: translate3d(0px, 0px, 0px); display: block; height: 50px;">
+                    <div id="testo_293" class="testoc"
+                        style="width: 462px; height: 50px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(0, 59, 121);"></span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Administración de portafolio propio de clientes
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="294"
+                    style="position: absolute; top: 1359px; left: 557px; z-index: 45; transform: translate3d(0px, 0px, 0px); display: block; height: 94px;">
+                    <div id="testo_294" class="testoc"
+                        style="width: 590px; height: 94px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">O</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">frecemos
+                                    la opción de manejar un portafolio de inversiones a un cliente que desea
+                                    diversificarse y obtener mayor rentabilidad. </span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="295"
+                    style="position: absolute; top: 1475px; left: 540px; z-index: 46; transform: translate3d(0px, 0px, 0px); display: block; height: 50px;">
+                    <div id="testo_295" class="testoc"
+                        style="width: 338px; height: 50px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(0, 59, 121);"></span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Asesoría financiera y de inversión
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="296"
+                    style="position: absolute; top: 1508px; left: 556px; z-index: 47; transform: translate3d(0px, 0px, 0px); display: block; height: 94px;">
+                    <div id="testo_296" class="testoc"
+                        style="width: 547px; height: 94px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">A</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">sesoramos
+                                    a nuestros clientes para que puedan obtener inversiones acorde a su perfil de
+                                    inversionista, y consecuentemente alcanzar sus metas financieras.</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="297"
+                    style="position: absolute; top: 1692px; left: -141px; z-index: 48; transform: translate3d(0px, 0px, 0px); display: block; height: 142px;">
+                    <div id="testo_297" class="testoc"
+                        style="width: 604px; height: 142px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">N</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">uestros
+                                    clientes puedes adquirir Títulos Valores que estén disponibles en el Mercado, tales
+                                    como: bonos del Ministerio de Hacienda, títulos del Banco Central, bonos
+                                    corporativos y otros títulos de Oferta Pública autorizados por la Superintendencia
+                                    de Valores.</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="298"
+                    style="position: absolute; top: 1660px; left: -157px; z-index: 49; transform: translate3d(0px, 0px, 0px); display: block; height: 50px;">
+                    <div id="testo_298" class="testoc"
+                        style="width: 448px; height: 50px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(0, 59, 121);"></span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Intermediación de títulos-valores ya emitidos
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="303"
+                    style="position: absolute; top: 1135px; left: -165px; z-index: 50; transform: translate3d(0px, 0px, 0px); display: block; height: 71px;">
+                    <div id="testo_303" class="testoc"
+                        style="width: 274px; height: 71px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);">servicios</span><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="304"
+                    style="position: absolute; top: 2190px; left: -161px; z-index: 51; transform: translate3d(0px, 0px, 0px); display: block; height: 71px;">
+                    <div id="testo_304" class="testoc"
+                        style="width: 575px; height: 71px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 46px; font-family: Roboto; color: rgb(0, 57, 121);">N</span><span
+                                    style="text-transform: uppercase; font-size: 46px; font-family: Roboto; color: rgb(0, 57, 121);">uestras
+                                    emisiones</span><span
+                                    style="text-transform: uppercase; font-size: 46px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="305"
+                    style="position: absolute; top: 2436px; left: -13px; z-index: 52; transform: translate3d(0px, 0px, 0px); display: block; height: 79px;">
+                    <div id="testo_305" class="testoc"
+                        style="width: 229px; height: 79px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">R</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">D$500
+                                    MM
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Emisión
+                                    de Bonos Corporativos
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Octubre
+                                    2010</span><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="306"
+                    style="position: absolute; top: 2388px; left: -12px; z-index: 53; transform: translate3d(0px, 0px, 0px); display: block; height: 71px;">
+                    <div id="testo_306" class="testoc"
+                        style="width: 189px; height: 71px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">B</span><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">anco
+                                    de Ahorro y
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">Crédito
+                                    Ademi, S.A.</span><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="307"
+                    style="position: absolute; top: 2436px; left: 455px; z-index: 54; transform: translate3d(0px, 0px, 0px); display: block; height: 79px;">
+                    <div id="testo_307" class="testoc"
+                        style="width: 229px; height: 79px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">U</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">S$100
+                                    MM
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Emisión
+                                    de Bonos Corporativos
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Octubre
+                                    2010</span><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="308"
+                    style="position: absolute; top: 2388px; left: 455px; z-index: 55; transform: translate3d(0px, 0px, 0px); display: block; height: 72px;">
+                    <div id="testo_308" class="testoc"
+                        style="width: 238px; height: 72px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">A</span><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">sociación
+                                    La Vega Real
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">de
+                                    Ahorros y Préstamos</span><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="309"
+                    style="position: absolute; top: 2435px; left: 912px; z-index: 56; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_309" class="testoc"
+                        style="width: 229px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">U</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">S$23.2
+                                    MM
+                                </span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">R</span><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">D$286.7
+                                    MM
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Emisión
+                                    de Bonos Corporativos
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Octubre
+                                    2010</span><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="310"
+                    style="position: absolute; top: 2387px; left: 913px; z-index: 57; transform: translate3d(0px, 0px, 0px); display: block; height: 68px;">
+                    <div id="testo_310" class="testoc"
+                        style="width: 195px; height: 68px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">C</span><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">ervecería
+                                    Nacional
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">Dominicana</span><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="311"
+                    style="position: absolute; top: 2650px; left: 442px; z-index: 58; transform: translate3d(0px, 0px, 0px); display: block; height: 79px;">
+                    <div id="testo_311" class="testoc"
+                        style="width: 196px; height: 79px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">R</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">D$5,000
+                                    MM
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Bonos
+                                    Deuda Subordinada
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Octubre
+                                    2012</span><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="312"
+                    style="position: absolute; top: 2650px; left: 911px; z-index: 59; transform: translate3d(0px, 0px, 0px); display: block; height: 79px;">
+                    <div id="testo_312" class="testoc"
+                        style="width: 195px; height: 79px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">R</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">D$10,000
+                                    MM
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Bonos
+                                    Deuda Subordinada
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Diciembre
+                                    2016</span><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="313"
+                    style="position: absolute; top: 2602px; left: 443px; z-index: 60; transform: translate3d(0px, 0px, 0px); display: block; height: 72px;">
+                    <div id="testo_313" class="testoc"
+                        style="width: 267px; height: 72px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">B</span><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">anco
+                                    Popular Dominicano,
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">S.A.
+                                    - Banco Múltiple</span><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="314"
+                    style="position: absolute; top: 2602px; left: 911px; z-index: 61; transform: translate3d(0px, 0px, 0px); display: block; height: 72px;">
+                    <div id="testo_314" class="testoc"
+                        style="width: 267px; height: 72px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">B</span><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">anco
+                                    Popular Dominicano,
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">S.A.
+                                    - Banco Múltiple</span><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="315"
+                    style="position: absolute; top: 2377px; left: -167px; z-index: 62; transform: translate3d(0px, 0px, 0px); display: block; height: 141px;">
+                    <div id="immaginesingola_315" style="position:absolute;width:141px;height:141px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 141px; height: 141px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_315">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:141px;height:141px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/315/f1/356.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="316"
+                    style="position: absolute; top: 2382px; left: -147px; z-index: 63; transform: translate3d(0px, 0px, 0px); display: block; height: 127px;">
+                    <div id="immaginesingola_316" style="position:absolute;width:103px;height:127px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 103px; height: 127px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_316">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:103px;height:127px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/316/f1/357.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="317"
+                    style="position: absolute; top: 2377px; left: 302px; z-index: 64; transform: translate3d(0px, 0px, 0px); display: block; height: 141px;">
+                    <div id="immaginesingola_317" style="position:absolute;width:141px;height:141px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 141px; height: 141px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_317">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:141px;height:141px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/317/f1/358.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="318"
+                    style="position: absolute; top: 2423px; left: 309px; z-index: 65; transform: translate3d(0px, 0px, 0px); display: block; height: 53px;">
+                    <div id="immaginesingola_318" style="position:absolute;width:128px;height:53px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 128px; height: 53px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_318">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:128px;height:53px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/318/f1/359.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="319"
+                    style="position: absolute; top: 2378px; left: 756px; z-index: 66; transform: translate3d(0px, 0px, 0px); display: block; height: 141px;">
+                    <div id="immaginesingola_319" style="position:absolute;width:142px;height:141px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 142px; height: 141px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_319">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:142px;height:141px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/319/f1/360.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="320"
+                    style="position: absolute; top: 2389px; left: 772px; z-index: 67; transform: translate3d(0px, 0px, 0px); display: block; height: 117px;">
+                    <div id="immaginesingola_320" style="position:absolute;width:117px;height:117px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 117px; height: 117px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_320">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:117px;height:117px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/320/f1/361.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="321"
+                    style="position: absolute; top: 2399px; left: 782px; z-index: 68; transform: translate3d(0px, 0px, 0px); display: block; height: 98px;">
+                    <div id="immaginesingola_321" style="position:absolute;width:97px;height:98px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 97px; height: 98px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_321">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:97px;height:98px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/321/f1/362.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="322"
+                    style="position: absolute; top: 2593px; left: 288px; z-index: 69; transform: translate3d(0px, 0px, 0px); display: block; height: 141px;">
+                    <div id="immaginesingola_322" style="position:absolute;width:141px;height:141px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 141px; height: 141px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_322">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:141px;height:141px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/322/f1/363.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="323"
+                    style="position: absolute; top: 2606px; left: 311px; z-index: 70; transform: translate3d(0px, 0px, 0px); display: block; height: 115px;">
+                    <div id="immaginesingola_323" style="position:absolute;width:97px;height:115px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 97px; height: 115px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_323">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:97px;height:115px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/323/f1/364.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="324"
+                    style="position: absolute; top: 2650px; left: -10px; z-index: 71; transform: translate3d(0px, 0px, 0px); display: block; height: 79px;">
+                    <div id="testo_324" class="testoc"
+                        style="width: 195px; height: 79px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">R</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">D$4,100
+                                    MM
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Bonos
+                                    Deuda Subordinada
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Diciembre
+                                    2007</span><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="325"
+                    style="position: absolute; top: 2602px; left: -10px; z-index: 72; transform: translate3d(0px, 0px, 0px); display: block; height: 72px;">
+                    <div id="testo_325" class="testoc"
+                        style="width: 267px; height: 72px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">B</span><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">anco
+                                    Popular Dominicano,
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">S.A.
+                                    - Banco Múltiple</span><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="326"
+                    style="position: absolute; top: 2593px; left: -165px; z-index: 73; transform: translate3d(0px, 0px, 0px); display: block; height: 141px;">
+                    <div id="immaginesingola_326" style="position:absolute;width:141px;height:141px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 141px; height: 141px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_326">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:141px;height:141px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/326/f1/367.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="327"
+                    style="position: absolute; top: 2606px; left: -142px; z-index: 74; transform: translate3d(0px, 0px, 0px); display: block; height: 115px;">
+                    <div id="immaginesingola_327" style="position:absolute;width:97px;height:115px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 97px; height: 115px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_327">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:97px;height:115px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/327/f1/368.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="328"
+                    style="position: absolute; top: 2870px; left: 442px; z-index: 75; transform: translate3d(0px, 0px, 0px); display: block; height: 79px;">
+                    <div id="testo_328" class="testoc"
+                        style="width: 245px; height: 79px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">R</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">D$300
+                                    MM
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Bonos
+                                    Corporativos Garantizados
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Abril
+                                    2017</span><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="329"
+                    style="position: absolute; top: 2823px; left: 443px; z-index: 76; transform: translate3d(0px, 0px, 0px); display: block; height: 68px;">
+                    <div id="testo_329" class="testoc"
+                        style="width: 173px; height: 68px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">D</span><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">ominican
+                                    Power
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">Partners</span><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="330"
+                    style="position: absolute; top: 2814px; left: 288px; z-index: 77; transform: translate3d(0px, 0px, 0px); display: block; height: 141px;">
+                    <div id="immaginesingola_330" style="position:absolute;width:141px;height:141px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 141px; height: 141px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_330">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:141px;height:141px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/330/f1/371.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="331"
+                    style="position: absolute; top: 2870px; left: -10px; z-index: 78; transform: translate3d(0px, 0px, 0px); display: block; height: 79px;">
+                    <div id="testo_331" class="testoc"
+                        style="width: 244px; height: 79px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">R</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">D$300
+                                    MM
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Bonos
+                                    Corporativos Garantizados
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);">Febrero
+                                    2007</span><span
+                                    style="line-height: 14px; font-size: 12px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="332"
+                    style="position: absolute; top: 2823px; left: -10px; z-index: 79; transform: translate3d(0px, 0px, 0px); display: block; height: 68px;">
+                    <div id="testo_332" class="testoc"
+                        style="width: 173px; height: 68px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">D</span><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">ominican
+                                    Power
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">Partners</span><span
+                                    style="line-height: 17px; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="333"
+                    style="position: absolute; top: 2814px; left: -165px; z-index: 80; transform: translate3d(0px, 0px, 0px); display: block; height: 141px;">
+                    <div id="immaginesingola_333" style="position:absolute;width:141px;height:141px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 141px; height: 141px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_333">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:141px;height:141px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/333/f1/374.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="334"
+                    style="position: absolute; top: 2854px; left: -157px; z-index: 81; transform: translate3d(0px, 0px, 0px); display: block; height: 61px;">
+                    <div id="immaginesingola_334" style="position:absolute;width:125px;height:61px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 125px; height: 61px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_334">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:125px;height:61px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/334/f1/375.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="335"
+                    style="position: absolute; top: 2854px; left: 298px; z-index: 82; transform: translate3d(0px, 0px, 0px); display: block; height: 61px;">
+                    <div id="immaginesingola_335" style="position:absolute;width:125px;height:61px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 125px; height: 61px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_335">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:125px;height:61px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/335/f1/376.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="336"
+                    style="position: absolute; top: 2592px; left: 757px; z-index: 83; transform: translate3d(0px, 0px, 0px); display: block; height: 141px;">
+                    <div id="immaginesingola_336" style="position:absolute;width:141px;height:141px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 141px; height: 141px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_336">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:141px;height:141px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/336/f1/377.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="337"
+                    style="position: absolute; top: 2606px; left: 779px; z-index: 84; transform: translate3d(0px, 0px, 0px); display: block; height: 115px;">
+                    <div id="immaginesingola_337" style="position:absolute;width:97px;height:115px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 97px; height: 115px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_337">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:97px;height:115px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/337/f1/378.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="338"
+                    style="position: absolute; top: 3334px; left: -165px; z-index: 85; transform: translate3d(0px, 0px, 0px); display: block; height: 55px;">
+                    <div id="testo_338" class="testoc"
+                        style="width: 286px; height: 55px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="text-transform: uppercase; font-size: 22px; font-family: Roboto; color: rgb(0, 57, 121);">Boletín
+                                    Económico</span><span
+                                    style="text-transform: uppercase; font-size: 22px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="339"
+                    style="position: absolute; top: 3339px; left: 995px; z-index: 86; transform: translate3d(0px, 0px, 0px); display: block; height: 43px;">
+                    <div id="immaginesingola_339" style="position:absolute;width:168px;height:43px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 168px; height: 43px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_339">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:168px;height:43px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/339/f1/381.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="340"
+                    style="position: absolute; top: 3354px; left: 1021px; z-index: 87; transform: translate3d(0px, 0px, 0px); display: block; height: 42px;">
+                     <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: Roboto; color: rgb(255, 255, 255);"><p style="text-align: left;">
+                                            <img src="https://dabuttonfactory.com/button.png?t=SUSCRIBETE&f=Roboto-Bold&ts=18&tc=fff&hp=22&vp=8&c=20&bgt=unicolored&bgc=f90";
+                                        </p></span><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div> 
+                </div>
+                <div id="341"
+                    style="position: absolute; top: 3387px; left: -165px; z-index: 88; transform: translate3d(0px, 0px, 0px); display: block; height: 42px;">
+                    <div id="testo_341" class="testoc"
+                        style="width: 233px; height: 42px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);">VEr
+                                    todos los boletines</span><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="342"
+                    style="position: absolute; top: 3484px; left: -166px; z-index: 89; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_342" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_342">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/342/f1/385.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="343"
+                    style="position: absolute; top: 3484px; left: -166px; z-index: 90; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_343" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_343">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/343/f1/386.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="344"
+                    style="position: absolute; top: 3690px; left: -147px; z-index: 91; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_344" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="345"
+                    style="position: absolute; top: 3716px; left: -147px; z-index: 92; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_345" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="346"
+                    style="position: absolute; top: 3652px; left: 86px; z-index: 93; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_346" style="position:absolute;width:32px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 32px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_346">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:32px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/346/f1/391.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="347"
+                    style="position: absolute; top: 3661px; left: 94px; z-index: 94; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_347" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="348"
+                    style="position: absolute; top: 3484px; left: 177px; z-index: 95; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_348" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_348">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/348/f1/395.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="349"
+                    style="position: absolute; top: 3484px; left: 177px; z-index: 96; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_349" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_349">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/349/f1/396.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="350"
+                    style="position: absolute; top: 3690px; left: 197px; z-index: 97; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_350" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="351"
+                    style="position: absolute; top: 3716px; left: 197px; z-index: 98; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_351" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="352"
+                    style="position: absolute; top: 3652px; left: 430px; z-index: 99; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_352" style="position:absolute;width:32px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 32px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_352">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:32px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/352/f1/401.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="353"
+                    style="position: absolute; top: 3661px; left: 438px; z-index: 100; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_353" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="354"
+                    style="position: absolute; top: 3484px; left: 522px; z-index: 101; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_354" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_354">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/354/f1/405.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="355"
+                    style="position: absolute; top: 3484px; left: 522px; z-index: 102; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_355" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_355">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/355/f1/406.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="356"
+                    style="position: absolute; top: 3690px; left: 541px; z-index: 103; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_356" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="357"
+                    style="position: absolute; top: 3716px; left: 541px; z-index: 104; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_357" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="358"
+                    style="position: absolute; top: 3652px; left: 774px; z-index: 105; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_358" style="position:absolute;width:32px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 32px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_358">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:32px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/358/f1/411.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="359"
+                    style="position: absolute; top: 3661px; left: 783px; z-index: 106; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_359" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="360"
+                    style="position: absolute; top: 3484px; left: 862px; z-index: 107; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_360" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_360">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/360/f1/415.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="361"
+                    style="position: absolute; top: 3484px; left: 862px; z-index: 108; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_361" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_361">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/361/f1/416.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="362"
+                    style="position: absolute; top: 3690px; left: 881px; z-index: 109; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_362" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="363"
+                    style="position: absolute; top: 3716px; left: 881px; z-index: 110; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_363" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="364"
+                    style="position: absolute; top: 3652px; left: 1115px; z-index: 111; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_364" style="position:absolute;width:32px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 32px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_364">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:32px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/364/f1/421.png?no=1550681900">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="365"
+                    style="position: absolute; top: 3661px; left: 1123px; z-index: 112; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_365" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            body {
+                margin-bottom: 32px;
+            }
+        </style>
+        
+    </div> 
+</body>
+
+</html>

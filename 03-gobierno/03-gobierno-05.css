@@ -1,0 +1,35 @@
+@font-face
+{
+    font-family:'Roboto', sans-serif;
+    src: url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+}
+/* fondo col */
+.fondo1{
+    background:crimson;
+
+}
+.fondo2{
+    background:chartreuse;
+    
+}
+#titulo1{
+    font-family: 'Roboto Light', sans-serif;
+    font-size: 60px;
+    color: rgb(0, 28, 119)
+}
+#titulo2{
+    font-family: 'Roboto Black', sans-serif;
+    font-size: 20px;
+    color: #003B7A
+}
+@media (max-width : 765px){
+    #titulo1{
+        font-size: 20px;
+    }
+    .fondo1{
+        background: gray;
+    }
+    .fondo2{
+        background: black;
+    }
+} 

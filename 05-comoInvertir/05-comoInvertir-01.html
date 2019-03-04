@@ -1,0 +1,798 @@
+<html lang="es">
+
+<head>
+    <title>16-como-invertir1-ipsa</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="all">
+    <meta name="viewport" content="width=1024">
+    <style>
+        
+        @font-face {
+            font-family: 'Roboto';
+            src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+        }
+   
+
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        * {
+            margin: 0;
+            /*text-rendering: optimizeLegibility;*/
+        }
+
+        #mc5 h1,
+        #mc5 h2,
+        #mc5 h3 {
+            font-weight: 400;
+        }
+
+        body,
+        #website {
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background: #ffffff;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            /*-webkit-font-smoothing: antialiased;*/
+            -webkit-overflow-scrolling: touch;
+        }
+
+        div,
+        span {
+            max-height: 100000px;
+        }
+
+        .testoc {
+            line-height: 1.2;
+            vertical-align: top;
+        }
+
+        body.flazioNoScroll {
+            overflow: hidden !important;
+        }
+
+        body *::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        body *::-webkit-scrollbar-thumb {
+            border-radius: 15px;
+            background: rgba(153, 156, 161, 0.8);
+        }
+
+        body *::-webkit-scrollbar-track {
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .yscrollbar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            background: red;
+            z-index: 30000;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            /* Background */
+            background: rgba(0, 0, 0, 0.2);
+            /* Border bottom light */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            /* Inner top shadow */
+            -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .yscroller {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+
+        .yscroller:hover {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+
+        .yscroller:active {
+            background: #003399;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+    </style>
+  
+ 
+    <style type="text/css">
+        .comp_ombrasemplice {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 4px 12px -6px;
+            z-index: -1;
+        }
+
+        .comp_ombradestra,
+        .comp_ombradestrasinistra,
+        .comp_ombrasinistra,
+        .comp_ombrataglio {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            height: 20px;
+            width: 100%;
+            overflow: hidden
+        }
+
+        .comp_ombradestra:after,
+        .comp_ombradestrasinistra:after,
+        .comp_ombradestrasinistra:before,
+        .comp_ombrasinistra:before {
+            bottom: 30px;
+            width: calc(50% - 10px);
+            max-width: 300px;
+            box-shadow: 0 15px 10px;
+            position: absolute;
+            height: 20px;
+            content: "";
+            z-index: -1
+        }
+
+        .comp_ombradestrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestrasinistra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrataglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            height: 20px;
+            bottom: 20px;
+            left: 15px;
+            right: 15px;
+            border-radius: 100px/10px
+        }
+
+        .comp_effettoglossy,
+        .comp_ombraannullata,
+        .comp_ombrainterna,
+        .comp_ombralunga {
+            width: 100%;
+            height: 100%;
+            position: absolute
+        }
+
+        .comp_ombralunga {
+            bottom: 0;
+            box-shadow: 1px 1px, 2px 2px, 3px 3px, 4px 4px, 5px 5px, 6px 6px, 7px 7px, 8px 8px, 9px 9px, 10px 10px, 11px 11px, 12px 12px, 13px 13px, 14px 14px, 15px 15px, 16px 16px, 17px 17px, 18px 18px, 19px 19px, 20px 20px, 21px 21px, 22px 22px, 23px 23px, 24px 24px, 25px 25px, 26px 26px, 27px 27px, 28px 28px, 29px 29px, 30px 30px, 31px 31px, 32px 32px, 33px 33px, 34px 34px, 35px 35px, 36px 36px, 37px 37px, 38px 38px, 39px 39px, 40px 40px, 41px 41px, 42px 42px, 43px 43px, 44px 44px, 45px 45px, 46px 46px, 47px 47px, 48px 48px, 49px 49px, 50px 50px, 51px 51px, 52px 52px, 53px 53px, 54px 54px, 55px 55px, 56px 56px, 57px 57px, 58px 58px, 59px 59px, 60px 60px
+        }
+
+        .comp_ombrainterna {
+            bottom: 0;
+            box-shadow: inset 0 0 10px
+        }
+
+        .comp_effettoglossy {
+            bottom: 0;
+            box-shadow: 0 1px 4px, inset 0 0 40px
+        }
+
+        .comp_doppiotaglio:after,
+        .comp_doppiotaglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglio:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_doppiotaglioverticale:after,
+        .comp_doppiotaglioverticale:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 10px;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglioverticale:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_ombraannullata {
+            bottom: 0;
+            box-shadow: 0 4px 12px -6px;
+            left: 0;
+            border-radius: inherit
+        }
+
+        .comp_ombraannullata:after,
+        .comp_ombraannullata:before {
+            display: none !important
+        }
+
+        .shadow_tendina {
+            width: 230px;
+            height: 134px;
+            transform: scale(.3);
+            transform-origin: top left;
+            background: #1287cb;
+            color: rgba(0, 0, 0, .4);
+            position: absolute;
+            margin-bottom: 50px
+        }
+
+        .shadow_tendina.active {
+            background: #0ea7ff
+        }
+    </style>
+    <style type="text/css">
+        .hoverimage_opacityIn img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityIn:hover img,
+        .hoverimage_opacityOut img {
+            opacity: 1;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityOut:hover img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn:hover img,
+        .hoverimage_zoomOut img {
+            transform: scale(1.3);
+            -webkit-transform: scale(1.3);
+            -moz-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            -o-transform: scale(1.3);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomOut:hover img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn:hover img,
+        .hoverimage_rotateZoomOut img {
+            transform: scale(1.3) rotate(15deg);
+            -webkit-transform: scale(1.3) rotate(15deg);
+            -moz-transform: scale(1.3) rotate(15deg);
+            -ms-transform: scale(1.3) rotate(15deg);
+            -o-transform: scale(1.3) rotate(15deg);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomOut:hover img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn:hover img,
+        .hoverimage_greyscaleOut img {
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleOut:hover img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn:hover img,
+        .hoverimage_blurOut img {
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -ms-filter: blur(2px);
+            -o-filter: blur(2px);
+            filter: blur(2px);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurOut:hover img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn:hover img,
+        .hoverimage_blurGreyscaleOut img {
+            -webkit-filter: blur(2px) grayscale(100%);
+            -moz-filter: blur(2px) grayscale(100%);
+            -ms-filter: blur(2px) grayscale(100%);
+            -o-filter: blur(2px) grayscale(100%);
+            filter: blur(2px) grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleOut:hover img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+    </style>
+    <link href="//www.flazio.com/componenti/flaziobn/style.css" rel="stylesheet">
+</head>
+
+<body oncontextmenu="return false" cz-shortcut-listen="true" style="height: 2553px; overflow: hidden scroll; top: 0px;">
+    <div id="website" style="overflow: hidden;">
+        <div id="aCC5" style="position:absolute; z-index:100; left: 50%; top: 0;">
+            <div id="mc5" style="position:absolute; z-index:150; left: -500px; top: 0px;">
+               
+               
+             <!----------------------------------------------------TITULO------------------------------------------------>
+                <div id="5524"
+                    style="position: absolute; top: 187px; left: -165px; z-index: 17; transform: translate3d(0px, 0px, 0px); display: block; height: 93px;">
+                    <div id="testo_5524" class="testoc"
+                        style="width: 465px; height: 93px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);">¿Cómo
+                                    invertir?</span><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+  
+
+                <!-----------------------------------------ICONO FLECHA------------------------------------------------>
+                <div id="5526"
+                    style="position: absolute; top: 1902px; left: 848px; z-index: 19; transform: translate3d(0px, 0px, 0px); display: block; height: 60px;">
+                    <div id="testo_5526" class="testoc"
+                        style="width: 40px; height: 60px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 28px; font-family: Roboto; color: rgb(255, 255, 255);"></span><span
+                                    style="text-transform: uppercase; font-size: 28px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!---------------------------------------------------BOTON SOLICITA MAS INFORMACION--------------------------->
+                <div id="5530"
+                    style="position: absolute; top: 668px; left: 892px; z-index: 21; transform: translate3d(0px, 0px, 0px); display: block; height: 46px;">
+                    <div id="testo_5530" class="testoc"
+                        style="width: 245px; height: 46px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: Roboto; color: rgb(255, 255, 255);">Solicita
+                                    más información</span><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!---------------------------------------------TEXTOS--------------------------------------------------------->
+                <div id="5663"
+                    style="position: absolute; top: 1797px; left: -55px; z-index: 31; transform: translate3d(0px, 0px, 0px); display: block; height: 142px;">
+                    <div id="testo_5663" class="testoc"
+                        style="width: 412px; height: 142px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 19px; font-family: Roboto; color: rgb(101, 101, 101);">Diversifica
+                                    tus ahorros a través de diferentes productos, esto te permitirá mitigar el riesgo y
+                                    recibir intereses en diferentes fechas. </span><span
+                                    style="font-size: 19px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5664"
+                    style="position: absolute; top: 917px; left: 825px; z-index: 32; transform: translate3d(0px, 0px, 0px); display: block; height: 338px;">
+                    <div id="testo_5664" class="testoc"
+                        style="width: 347px; height: 338px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 20px; font-family: Roboto; color: rgb(101, 101, 101);">¿Eres
+                                    un cliente que va a necesitar el dinero en corto plazo? Entonces debes de invertir
+                                    en productos que no exceden del tiempo en el que vayas a necesitar parte o la
+                                    totalidad del dinero invertido. En el Mercado de Valores hay una gran variedad de
+                                    productos que se van a adaptar a tus necedades de inversión.</span><span
+                                    style="font-size: 20px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5665"
+                    style="position: absolute; top: 1339px; left: 826px; z-index: 33; transform: translate3d(0px, 0px, 0px); display: block; height: 367px;">
+                    <div id="testo_5665" class="testoc"
+                        style="width: 339px; height: 367px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 20px; font-family: Roboto; color: rgb(101, 101, 101);">Todas
+                                    las inversiones que se realizan en el MV se pueden vender en el Mercado Secundario,
+                                    por lo que no tienes que esperar hasta el vencimiento del bono para recibir tu
+                                    capital. Esta venta puede reflejar una ganancia o pérdida, todo va a depender del
+                                    precio al cual se esté negociando al momento de la venta. </span><span
+                                    style="font-size: 20px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5667"
+                    style="position: absolute; top: 769px; left: -136px; z-index: 34; transform: translate3d(0px, 0px, 0px); display: block; height: 142px;">
+                    <div id="testo_5667" class="testoc"
+                        style="width: 274px; height: 142px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 19px; font-family: Roboto; color: rgb(101, 101, 101);">Lo
+                                    primero que debes de hacer antes de realizar tu primera inversión en el Mercado de
+                                    Valores...</span><span
+                                    style="font-size: 19px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5668"
+                    style="position: absolute; top: 1132px; left: -164px; z-index: 35; transform: translate3d(0px, 0px, 0px); display: block; height: 365px;">
+                    <div id="testo_5668" class="testoc"
+                        style="width: 394px; height: 365px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 19px; font-family: Roboto; color: rgb(101, 101, 101);">Conoce
+                                    sobre los productos a invertir, es importante saber la prioridad de pagos, tiempo y
+                                    monto mínimo de inversión. En ese mismo orden, hay algunas emisiones que tienen
+                                    pagos de capital anticipado, por eso es tan importante leer los prospectos de los
+                                    emisores de valores que están publicados en la página de la Superintendencia de
+                                    Valores de la Republica Dominicana.</span><span
+                                    style="font-size: 19px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-----------------------------------NAV------------------------------------------------------------->
+                                                  <!--------------EMPIEZA A INVERTIR------------->
+                <div id="5697"
+                    style="position: absolute; top: 534px; left: 1025px; z-index: 45; transform: translate3d(0px, 0px, 0px); display: block; height: 77px;">
+                    <div id="testo_5697" class="testoc"
+                        style="width: 106px; height: 77px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            
+                            <p style="text-align: left;"><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(203, 203, 203);">Empieza a
+                                    invertir</span><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(203, 203, 203);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5698"
+                    style="position: absolute; top: 536px; left: 966px; z-index: 46; transform: translate3d(0px, 0px, 0px); display: block; height: 76px;">
+                    <div id="testo_5698" class="testoc"
+                        style="width: 46px; height: 76px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="text-transform: uppercase; font-size: 53px; font-family: Roboto; color: rgb(203, 203, 203);">4</span><span
+                                    style="text-transform: uppercase; font-size: 53px; font-family: Roboto; color: rgb(203, 203, 203);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                                             <!--------------CONOCE INSTRUMENTOS DE INVERSION------------->
+                <div id="5699"
+                    style="position: absolute; top: 533px; left: 611px; z-index: 47; transform: translate3d(0px, 0px, 0px); display: block; height: 78px;">
+                    <div id="testo_5699" class="testoc"
+                        style="width: 244px; height: 78px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(203, 203, 203);">Conoce
+                                    instrumentos de inversión</span><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(203, 203, 203);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5700"
+                    style="position: absolute; top: 535px; left: 543px; z-index: 48; transform: translate3d(0px, 0px, 0px); display: block; height: 78px;">
+                    <div id="testo_5700" class="testoc"
+                        style="width: 45px; height: 78px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="text-transform: uppercase; font-size: 54px; font-family: Roboto; color: rgb(203, 203, 203);">3</span><span
+                                    style="text-transform: uppercase; font-size: 54px; font-family: Roboto; color: rgb(203, 203, 203);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                                            <!--------------Identifica tu perfil de inversionista------------->
+                <div id="5701"
+                    style="position: absolute; top: 532px; left: 237px; z-index: 49; transform: translate3d(0px, 0px, 0px); display: block; height: 78px;">
+                    <div id="testo_5701" class="testoc"
+                        style="width: 199px; height: 78px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(203, 203, 203);">Identifica
+                                    tu perfil de inversionista</span><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(203, 203, 203);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5702"
+                    style="position: absolute; top: 534px; left: 182px; z-index: 50; transform: translate3d(0px, 0px, 0px); display: block; height: 77px;">
+                    <div id="testo_5702" class="testoc"
+                        style="width: 45px; height: 77px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: right;"><span
+                                    style="text-transform: uppercase; font-size: 53px; font-family: Roboto; color: rgb(203, 203, 203);">2</span><span
+                                    style="text-transform: uppercase; font-size: 53px; font-family: Roboto; color: rgb(203, 203, 203);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                                                     <!--Define tus necesidades-->
+                <div id="5706"
+                    style="position: absolute; top: 534px; left: -82px; z-index: 54; transform: translate3d(0px, 0px, 0px); display: block; height: 77px;">
+                    <div id="testo_5706" class="testoc"
+                        style="width: 146px; height: 77px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(0, 193, 213);">Define
+                                    tus necesidades</span><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(0, 193, 213);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5707"
+                    style="position: absolute; top: 534px; left: -134px; z-index: 55; transform: translate3d(0px, 0px, 0px); display: block; height: 77px;">
+                    <div id="testo_5707" class="testoc"
+                        style="width: 31px; height: 77px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: right;"><span
+                                    style="text-transform: uppercase; font-size: 53px; font-family: Roboto; color: rgb(0, 193, 213);">1</span><span
+                                    style="text-transform: uppercase; font-size: 53px; font-family: Roboto; color: rgb(0, 193, 213);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

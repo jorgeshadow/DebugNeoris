@@ -1,0 +1,1993 @@
+<html lang="es">
+
+<head>
+    <title>08-noticias3-ipsa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1024">
+    <style>
+         @font-face {
+            font-family: Roboto;
+            src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        * {
+            margin: 0;
+            /*text-rendering: optimizeLegibility;*/
+        }
+
+        #mc5 h1,
+        #mc5 h2,
+        #mc5 h3 {
+            font-weight: 400;
+        }
+
+        body,
+        #website {
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background: #ffffff;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            /*-webkit-font-smoothing: antialiased;*/
+            -webkit-overflow-scrolling: touch;
+        }
+
+        div,
+        span {
+            max-height: 100000px;
+        }
+
+        .testoc {
+            line-height: 1.2;
+            vertical-align: top;
+        }
+
+        body.flazioNoScroll {
+            overflow: hidden !important;
+        }
+
+        body *::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        body *::-webkit-scrollbar-thumb {
+            border-radius: 15px;
+            background: rgba(153, 156, 161, 0.8);
+        }
+
+        body *::-webkit-scrollbar-track {
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .yscrollbar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            background: red;
+            z-index: 30000;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            /* Background */
+            background: rgba(0, 0, 0, 0.2);
+            /* Border bottom light */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            /* Inner top shadow */
+            -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .yscroller {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+
+        .yscroller:hover {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+
+        .yscroller:active {
+            background: #003399;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+    </style>
+  
+   
+    <style type="text/css">
+        .hoverimage_opacityIn img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityIn:hover img,
+        .hoverimage_opacityOut img {
+            opacity: 1;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityOut:hover img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn:hover img,
+        .hoverimage_zoomOut img {
+            transform: scale(1.3);
+            -webkit-transform: scale(1.3);
+            -moz-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            -o-transform: scale(1.3);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomOut:hover img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn:hover img,
+        .hoverimage_rotateZoomOut img {
+            transform: scale(1.3) rotate(15deg);
+            -webkit-transform: scale(1.3) rotate(15deg);
+            -moz-transform: scale(1.3) rotate(15deg);
+            -ms-transform: scale(1.3) rotate(15deg);
+            -o-transform: scale(1.3) rotate(15deg);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomOut:hover img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn:hover img,
+        .hoverimage_greyscaleOut img {
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleOut:hover img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn:hover img,
+        .hoverimage_blurOut img {
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -ms-filter: blur(2px);
+            -o-filter: blur(2px);
+            filter: blur(2px);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurOut:hover img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn:hover img,
+        .hoverimage_blurGreyscaleOut img {
+            -webkit-filter: blur(2px) grayscale(100%);
+            -moz-filter: blur(2px) grayscale(100%);
+            -ms-filter: blur(2px) grayscale(100%);
+            -o-filter: blur(2px) grayscale(100%);
+            filter: blur(2px) grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleOut:hover img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+    </style>
+    <style type="text/css">
+        .comp_ombrasemplice {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 4px 12px -6px;
+            z-index: -1;
+        }
+
+        .comp_ombradestra,
+        .comp_ombradestrasinistra,
+        .comp_ombrasinistra,
+        .comp_ombrataglio {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            height: 20px;
+            width: 100%;
+            overflow: hidden
+        }
+
+        .comp_ombradestra:after,
+        .comp_ombradestrasinistra:after,
+        .comp_ombradestrasinistra:before,
+        .comp_ombrasinistra:before {
+            bottom: 30px;
+            width: calc(50% - 10px);
+            max-width: 300px;
+            box-shadow: 0 15px 10px;
+            position: absolute;
+            height: 20px;
+            content: "";
+            z-index: -1
+        }
+
+        .comp_ombradestrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestrasinistra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrataglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            height: 20px;
+            bottom: 20px;
+            left: 15px;
+            right: 15px;
+            border-radius: 100px/10px
+        }
+
+        .comp_effettoglossy,
+        .comp_ombraannullata,
+        .comp_ombrainterna,
+        .comp_ombralunga {
+            width: 100%;
+            height: 100%;
+            position: absolute
+        }
+
+        .comp_ombralunga {
+            bottom: 0;
+            box-shadow: 1px 1px, 2px 2px, 3px 3px, 4px 4px, 5px 5px, 6px 6px, 7px 7px, 8px 8px, 9px 9px, 10px 10px, 11px 11px, 12px 12px, 13px 13px, 14px 14px, 15px 15px, 16px 16px, 17px 17px, 18px 18px, 19px 19px, 20px 20px, 21px 21px, 22px 22px, 23px 23px, 24px 24px, 25px 25px, 26px 26px, 27px 27px, 28px 28px, 29px 29px, 30px 30px, 31px 31px, 32px 32px, 33px 33px, 34px 34px, 35px 35px, 36px 36px, 37px 37px, 38px 38px, 39px 39px, 40px 40px, 41px 41px, 42px 42px, 43px 43px, 44px 44px, 45px 45px, 46px 46px, 47px 47px, 48px 48px, 49px 49px, 50px 50px, 51px 51px, 52px 52px, 53px 53px, 54px 54px, 55px 55px, 56px 56px, 57px 57px, 58px 58px, 59px 59px, 60px 60px
+        }
+
+        .comp_ombrainterna {
+            bottom: 0;
+            box-shadow: inset 0 0 10px
+        }
+
+        .comp_effettoglossy {
+            bottom: 0;
+            box-shadow: 0 1px 4px, inset 0 0 40px
+        }
+
+        .comp_doppiotaglio:after,
+        .comp_doppiotaglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglio:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_doppiotaglioverticale:after,
+        .comp_doppiotaglioverticale:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 10px;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglioverticale:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_ombraannullata {
+            bottom: 0;
+            box-shadow: 0 4px 12px -6px;
+            left: 0;
+            border-radius: inherit
+        }
+
+        .comp_ombraannullata:after,
+        .comp_ombraannullata:before {
+            display: none !important
+        }
+
+        .shadow_tendina {
+            width: 230px;
+            height: 134px;
+            transform: scale(.3);
+            transform-origin: top left;
+            background: #1287cb;
+            color: rgba(0, 0, 0, .4);
+            position: absolute;
+            margin-bottom: 50px
+        }
+
+        .shadow_tendina.active {
+            background: #0ea7ff
+        }
+    </style>  
+</head>
+
+<body oncontextmenu="return false" cz-shortcut-listen="true" style="height: 2150px; overflow: hidden scroll; top: 0px;">
+    <div id="website" style="overflow: hidden;">
+        <div id="aCC5" style="position:absolute; z-index:100; left: 50%; top: 0;">
+            <div id="mc5" style="position:absolute; z-index:150; left: -500px; top: 0px;">
+                <div id="423"
+                    style="position: absolute; top: 0px; left: -296px; z-index: 0; transform: translate3d(0px, 0px, 0px); display: block; height: 1344px;">
+                    
+                </div>
+                <div id="424"
+                    style="position: absolute; top: 86px; left: -357px; z-index: 1; transform: translate3d(0px, 0px, 0px); display: block; height: 1666px;">
+                    <div id="immaginesingola_424" style="position:absolute;width:1683px;height:1666px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 1683px; height: 1666px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_424">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:1683px;height:1666px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 1683px; height: 1666px;">
+                                <img src="public/componenti/424/f1/2.png?no=41631838"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="425"
+                    style="position: absolute; top: 1716px; left: -312px; z-index: 2; transform: translate3d(0px, 0px, 0px); display: block; height: 434px;">
+                    <div id="immaginesingola_425" style="position:absolute;width:1621px;height:434px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 1621px; height: 434px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_425">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:1621px;height:434px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 1621px; height: 434px;">
+                                <img src="public/componenti/425/f1/4.png?no=1550683570"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+               
+                
+                
+               
+               
+                
+                
+                
+                <div id="445"
+                    style="position: absolute; top: 188px; left: -162px; z-index: 18; transform: translate3d(0px, 0px, 0px); display: block; height: 82px;">
+                    <div id="testo_445" class="testoc"
+                        style="width: 556px; height: 82px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);">Noticias
+                                    de interés</span><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="447"
+                    style="position: absolute; top: 254px; left: 851px; z-index: 19; transform: translate3d(0px, 0px, 0px); display: block; height: 68px;">
+                    <div id="immaginesingola_447" style="position:absolute;width:312px;height:68px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 312px; height: 68px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_447">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:312px;height:68px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 312px; height: 68px;">
+                                <img src="public/componenti/447/f1/33.png?no=41631838"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="448"
+                    style="position: absolute; top: 284px; left: 1119px; z-index: 20; transform: translate3d(0px, 0px, 0px); display: block; height: 42px;">
+                    <div id="testo_448" class="testoc"
+                        style="width: 30px; height: 42px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);"></span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);"></span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div> 
+                 
+                <div id="1221"
+                    style="position: absolute; top: 390px; left: -168px; z-index: 30; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_1221" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1221">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                             
+                        </div>
+                    </div>
+                </div>
+                <div id="1222"
+                    style="position: absolute; top: 596px; left: -149px; z-index: 31; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_1222" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1223"
+                    style="position: absolute; top: 623px; left: -149px; z-index: 32; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_1223" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1224"
+                    style="position: absolute; top: 559px; left: 84px; z-index: 33; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_1224" style="position:absolute;width:32px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 32px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1224">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:32px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1224/f1/309.png?no=41631838">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1225"
+                    style="position: absolute; top: 567px; left: 93px; z-index: 34; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_1225" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1226"
+                    style="position: absolute; top: 390px; left: 176px; z-index: 35; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_1226" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1226">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1226/f1/313.png?no=41631838">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1227"
+                    style="position: absolute; top: 390px; left: 176px; z-index: 36; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_1227" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1227">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1227/f1/314.png?no=41631838">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1228"
+                    style="position: absolute; top: 596px; left: 195px; z-index: 37; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_1228" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1229"
+                    style="position: absolute; top: 623px; left: 195px; z-index: 38; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_1229" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1230"
+                    style="position: absolute; top: 559px; left: 428px; z-index: 39; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_1230" style="position:absolute;width:32px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 32px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1230">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:32px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1230/f1/319.png?no=41631838">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1231"
+                    style="position: absolute; top: 567px; left: 436px; z-index: 40; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_1231" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1232"
+                    style="position: absolute; top: 390px; left: 520px; z-index: 41; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_1232" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1232">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1232/f1/323.png?no=41631838">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1233"
+                    style="position: absolute; top: 390px; left: 520px; z-index: 42; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_1233" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1233">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1233/f1/324.png?no=41631838">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1234"
+                    style="position: absolute; top: 596px; left: 539px; z-index: 43; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_1234" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1235"
+                    style="position: absolute; top: 623px; left: 539px; z-index: 44; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_1235" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1236"
+                    style="position: absolute; top: 559px; left: 773px; z-index: 45; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_1236" style="position:absolute;width:31px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 31px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1236">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:31px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1236/f1/329.png?no=41631838">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1237"
+                    style="position: absolute; top: 567px; left: 781px; z-index: 46; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_1237" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1238"
+                    style="position: absolute; top: 390px; left: 861px; z-index: 47; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_1238" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1238">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1238/f1/333.png?no=41631838">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1239"
+                    style="position: absolute; top: 390px; left: 861px; z-index: 48; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_1239" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1239">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1239/f1/334.png?no=41631838">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1240"
+                    style="position: absolute; top: 596px; left: 880px; z-index: 49; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_1240" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1241"
+                    style="position: absolute; top: 623px; left: 880px; z-index: 50; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_1241" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1242"
+                    style="position: absolute; top: 559px; left: 1113px; z-index: 51; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_1242" style="position:absolute;width:32px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 32px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1242">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:32px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1242/f1/339.png?no=41631838">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1243"
+                    style="position: absolute; top: 567px; left: 1121px; z-index: 52; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_1243" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1244"
+                    style="position: absolute; top: 780px; left: -168px; z-index: 53; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_1244" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1244">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1244/f1/343.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1245"
+                    style="position: absolute; top: 780px; left: -168px; z-index: 54; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_1245" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1245">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1245/f1/344.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1246"
+                    style="position: absolute; top: 986px; left: -149px; z-index: 55; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_1246" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1247"
+                    style="position: absolute; top: 1012px; left: -149px; z-index: 56; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_1247" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1248"
+                    style="position: absolute; top: 948px; left: 84px; z-index: 57; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_1248" style="position:absolute;width:32px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 32px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1248">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:32px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1248/f1/349.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1249"
+                    style="position: absolute; top: 956px; left: 93px; z-index: 58; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_1249" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1250"
+                    style="position: absolute; top: 780px; left: 176px; z-index: 59; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_1250" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1250">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1250/f1/353.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1251"
+                    style="position: absolute; top: 780px; left: 176px; z-index: 60; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_1251" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1251">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1251/f1/354.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1252"
+                    style="position: absolute; top: 986px; left: 195px; z-index: 61; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_1252" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1253"
+                    style="position: absolute; top: 1012px; left: 195px; z-index: 62; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_1253" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1254"
+                    style="position: absolute; top: 948px; left: 428px; z-index: 63; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_1254" style="position:absolute;width:32px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 32px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1254">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:32px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1254/f1/359.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1255"
+                    style="position: absolute; top: 956px; left: 436px; z-index: 64; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_1255" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1256"
+                    style="position: absolute; top: 780px; left: 520px; z-index: 65; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_1256" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1256">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1256/f1/363.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1257"
+                    style="position: absolute; top: 780px; left: 520px; z-index: 66; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_1257" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1257">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1257/f1/364.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1258"
+                    style="position: absolute; top: 986px; left: 539px; z-index: 67; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_1258" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1259"
+                    style="position: absolute; top: 1012px; left: 539px; z-index: 68; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_1259" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1260"
+                    style="position: absolute; top: 948px; left: 773px; z-index: 69; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_1260" style="position:absolute;width:31px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 31px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1260">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:31px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1260/f1/369.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1261"
+                    style="position: absolute; top: 956px; left: 781px; z-index: 70; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_1261" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1262"
+                    style="position: absolute; top: 780px; left: 861px; z-index: 71; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_1262" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1262">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1262/f1/373.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1263"
+                    style="position: absolute; top: 780px; left: 861px; z-index: 72; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_1263" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1263">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1263/f1/374.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1264"
+                    style="position: absolute; top: 986px; left: 880px; z-index: 73; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_1264" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1265"
+                    style="position: absolute; top: 1012px; left: 880px; z-index: 74; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_1265" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1266"
+                    style="position: absolute; top: 948px; left: 1113px; z-index: 75; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_1266" style="position:absolute;width:32px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 32px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1266">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:32px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1266/f1/379.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1267"
+                    style="position: absolute; top: 956px; left: 1121px; z-index: 76; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_1267" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1268"
+                    style="position: absolute; top: 1166px; left: -168px; z-index: 77; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_1268" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1268">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1268/f1/383.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1269"
+                    style="position: absolute; top: 1166px; left: -168px; z-index: 78; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_1269" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1269">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1269/f1/384.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1270"
+                    style="position: absolute; top: 1371px; left: -149px; z-index: 79; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_1270" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1271"
+                    style="position: absolute; top: 1398px; left: -149px; z-index: 80; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_1271" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1272"
+                    style="position: absolute; top: 1334px; left: 84px; z-index: 81; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_1272" style="position:absolute;width:32px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 32px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1272">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:32px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1272/f1/389.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1273"
+                    style="position: absolute; top: 1342px; left: 93px; z-index: 82; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_1273" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1274"
+                    style="position: absolute; top: 1166px; left: 176px; z-index: 83; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_1274" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1274">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1274/f1/393.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1275"
+                    style="position: absolute; top: 1166px; left: 176px; z-index: 84; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_1275" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1275">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1275/f1/394.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1276"
+                    style="position: absolute; top: 1371px; left: 195px; z-index: 85; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_1276" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1277"
+                    style="position: absolute; top: 1398px; left: 195px; z-index: 86; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_1277" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1278"
+                    style="position: absolute; top: 1334px; left: 428px; z-index: 87; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_1278" style="position:absolute;width:32px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 32px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1278">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:32px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1278/f1/399.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1279"
+                    style="position: absolute; top: 1342px; left: 436px; z-index: 88; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_1279" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1280"
+                    style="position: absolute; top: 1166px; left: 520px; z-index: 89; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_1280" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1280">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1280/f1/403.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1281"
+                    style="position: absolute; top: 1166px; left: 520px; z-index: 90; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_1281" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1281">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1281/f1/404.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1282"
+                    style="position: absolute; top: 1371px; left: 539px; z-index: 91; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_1282" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1283"
+                    style="position: absolute; top: 1398px; left: 539px; z-index: 92; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_1283" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1284"
+                    style="position: absolute; top: 1334px; left: 773px; z-index: 93; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_1284" style="position:absolute;width:31px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 31px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1284">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:31px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1284/f1/409.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1285"
+                    style="position: absolute; top: 1342px; left: 781px; z-index: 94; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_1285" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1286"
+                    style="position: absolute; top: 1166px; left: 861px; z-index: 95; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_1286" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1286">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1286/f1/413.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1287"
+                    style="position: absolute; top: 1166px; left: 861px; z-index: 96; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_1287" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1287">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1287/f1/414.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1288"
+                    style="position: absolute; top: 1371px; left: 880px; z-index: 97; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_1288" class="testoc"
+                        style="width: 199px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Boletín
+                                    económico</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1289"
+                    style="position: absolute; top: 1398px; left: 880px; z-index: 98; transform: translate3d(0px, 0px, 0px); display: block; height: 97px;">
+                    <div id="testo_1289" class="testoc"
+                        style="width: 246px; height: 97px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">O</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">fertas
+                                    del Mercado Secundario e indicadores macroeconómicos
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    actividad económica registró un </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">crecimiento
+                                    de 7.5% en el mes de abril</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1290"
+                    style="position: absolute; top: 1334px; left: 1113px; z-index: 99; transform: translate3d(0px, 0px, 0px); display: block; height: 32px;">
+                    <div id="immaginesingola_1290" style="position:absolute;width:32px;height:32px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 32px; height: 32px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1290">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:32px;height:32px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1290/f1/419.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1291"
+                    style="position: absolute; top: 1342px; left: 1121px; z-index: 100; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_1291" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="1292"
+                    style="position: absolute; top: 1577px; left: 463px; z-index: 101; transform: translate3d(0px, 0px, 0px); display: block; height: 68px;">
+                    <div id="immaginesingola_1292" style="position:absolute;width:68px;height:68px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 68px; height: 68px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_1292">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:68px;height:68px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/1292/f1/422.png?no=1550683570">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="1293"
+                    style="position: absolute; top: 1599px; left: 485px; z-index: 102; transform: translate3d(0px, 0px, 0px); display: block; height: 55px;">
+                    <div id="testo_1293" class="testoc"
+                        style="width: 36px; height: 55px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 25px; font-family: Roboto; color: rgb(203, 203, 203);">+</span><span
+                                    style="font-size: 25px; font-family: Roboto; color: rgb(203, 203, 203);"></span><span
+                                    style="font-size: 25px; font-family: Roboto; color: rgb(203, 203, 203);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="638"
+                    style="position: absolute; top: 269px; left: 644px; z-index: 103; transform: translate3d(0px, 0px, 0px); display: block; height: 43px;">
+                    <div id="immaginesingola_638" style="position:absolute;width:168px;height:43px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 168px; height: 43px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_638">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:168px;height:43px;">
+                             
+                        </div>
+                    </div>
+                </div>
+                <div id="639"
+                    style="position: absolute; top: 285px; left: 670px; z-index: 104; transform: translate3d(-30px, -10px, 0px); display: block; height: 42px;">
+                    <div id="testo_639" class="testoc"
+                         
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: Roboto; color: rgb(255, 255, 255);"><img src="https://dabuttonfactory.com/button.png?t=suscribirme&f=Roboto-Bold&ts=25&tc=fff&tshs=1&tshc=000&hp=20&vp=8&c=20&bgt=unicolored&bgc=f90"/></span><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p> 
+                    </div>
+                </div>
+                <div id="1294"
+                    style="position: absolute; top: 278px; left: 872px; z-index: 105; transform: translate3d(0px, 0px, 0px); display: block; height: 46px;">
+                    <div id="testo_1294" class="testoc"
+                        style="width: 178px; height: 46px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">B</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">oletín
+                                    Económico</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <style>
+            body {
+                margin-bottom: 32px;
+            }
+        </style>
+        
+    </div>
+    <div id="fb_pixel"></div>
+   
+    <div class="loaderGenerale"
+        style="z-index: 106; box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 37px -4px; margin-left: -150px;display:none;position:absolute; width:300px; height:95px; top:50%; left:50%; margin-top:-50px; background-image:url(//www.flazio.com/componenti/scrittori/ingrandita/img/loader.gif); background-position:center center; background-repeat: no-repeat; background-color:#fff; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;">
+    </div>
+    <div style="background-size: 100%; width: 100%; height: 657px; position: fixed; margin: 0px; top: 0px; left: 0px; z-index: 0;"
+        id="bodybk"></div><iframe src="https://www.flazio.com/server.html"
+        style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe>
+</body>
+
+</html>

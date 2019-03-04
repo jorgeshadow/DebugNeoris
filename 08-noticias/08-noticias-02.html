@@ -1,0 +1,979 @@
+<html lang="es">
+
+<head>
+    <title>08-noticias2-ipsa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1024">
+    <style>
+          @font-face {
+            font-family: Roboto;
+            src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        * {
+            margin: 0;
+            /*text-rendering: optimizeLegibility;*/
+        }
+
+        #mc5 h1,
+        #mc5 h2,
+        #mc5 h3 {
+            font-weight: 400;
+        }
+
+        body,
+        #website {
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background: #ffffff;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            /*-webkit-font-smoothing: antialiased;*/
+            -webkit-overflow-scrolling: touch;
+        }
+
+        div,
+        span {
+            max-height: 100000px;
+        }
+
+        .testoc {
+            line-height: 1.2;
+            vertical-align: top;
+        }
+
+        body.flazioNoScroll {
+            overflow: hidden !important;
+        }
+
+        body *::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        body *::-webkit-scrollbar-thumb {
+            border-radius: 15px;
+            background: rgba(153, 156, 161, 0.8);
+        }
+
+        body *::-webkit-scrollbar-track {
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .yscrollbar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            background: red;
+            z-index: 30000;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            /* Background */
+            background: rgba(0, 0, 0, 0.2);
+            /* Border bottom light */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            /* Inner top shadow */
+            -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .yscroller {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+
+        .yscroller:hover {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+
+        .yscroller:active {
+            background: #003399;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+    </style>
+   
+
+    <style type="text/css">
+        .comp_ombrasemplice {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 4px 12px -6px;
+            z-index: -1;
+        }
+
+        .comp_ombradestra,
+        .comp_ombradestrasinistra,
+        .comp_ombrasinistra,
+        .comp_ombrataglio {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            height: 20px;
+            width: 100%;
+            overflow: hidden
+        }
+
+        .comp_ombradestra:after,
+        .comp_ombradestrasinistra:after,
+        .comp_ombradestrasinistra:before,
+        .comp_ombrasinistra:before {
+            bottom: 30px;
+            width: calc(50% - 10px);
+            max-width: 300px;
+            box-shadow: 0 15px 10px;
+            position: absolute;
+            height: 20px;
+            content: "";
+            z-index: -1
+        }
+
+        .comp_ombradestrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestrasinistra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrataglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            height: 20px;
+            bottom: 20px;
+            left: 15px;
+            right: 15px;
+            border-radius: 100px/10px
+        }
+
+        .comp_effettoglossy,
+        .comp_ombraannullata,
+        .comp_ombrainterna,
+        .comp_ombralunga {
+            width: 100%;
+            height: 100%;
+            position: absolute
+        }
+
+        .comp_ombralunga {
+            bottom: 0;
+            box-shadow: 1px 1px, 2px 2px, 3px 3px, 4px 4px, 5px 5px, 6px 6px, 7px 7px, 8px 8px, 9px 9px, 10px 10px, 11px 11px, 12px 12px, 13px 13px, 14px 14px, 15px 15px, 16px 16px, 17px 17px, 18px 18px, 19px 19px, 20px 20px, 21px 21px, 22px 22px, 23px 23px, 24px 24px, 25px 25px, 26px 26px, 27px 27px, 28px 28px, 29px 29px, 30px 30px, 31px 31px, 32px 32px, 33px 33px, 34px 34px, 35px 35px, 36px 36px, 37px 37px, 38px 38px, 39px 39px, 40px 40px, 41px 41px, 42px 42px, 43px 43px, 44px 44px, 45px 45px, 46px 46px, 47px 47px, 48px 48px, 49px 49px, 50px 50px, 51px 51px, 52px 52px, 53px 53px, 54px 54px, 55px 55px, 56px 56px, 57px 57px, 58px 58px, 59px 59px, 60px 60px
+        }
+
+        .comp_ombrainterna {
+            bottom: 0;
+            box-shadow: inset 0 0 10px
+        }
+
+        .comp_effettoglossy {
+            bottom: 0;
+            box-shadow: 0 1px 4px, inset 0 0 40px
+        }
+
+        .comp_doppiotaglio:after,
+        .comp_doppiotaglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglio:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_doppiotaglioverticale:after,
+        .comp_doppiotaglioverticale:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 10px;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglioverticale:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_ombraannullata {
+            bottom: 0;
+            box-shadow: 0 4px 12px -6px;
+            left: 0;
+            border-radius: inherit
+        }
+
+        .comp_ombraannullata:after,
+        .comp_ombraannullata:before {
+            display: none !important
+        }
+
+        .shadow_tendina {
+            width: 230px;
+            height: 134px;
+            transform: scale(.3);
+            transform-origin: top left;
+            background: #1287cb;
+            color: rgba(0, 0, 0, .4);
+            position: absolute;
+            margin-bottom: 50px
+        }
+
+        .shadow_tendina.active {
+            background: #0ea7ff
+        }
+    </style>
+    <style type="text/css">
+        .hoverimage_opacityIn img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityIn:hover img,
+        .hoverimage_opacityOut img {
+            opacity: 1;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityOut:hover img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn:hover img,
+        .hoverimage_zoomOut img {
+            transform: scale(1.3);
+            -webkit-transform: scale(1.3);
+            -moz-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            -o-transform: scale(1.3);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomOut:hover img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn:hover img,
+        .hoverimage_rotateZoomOut img {
+            transform: scale(1.3) rotate(15deg);
+            -webkit-transform: scale(1.3) rotate(15deg);
+            -moz-transform: scale(1.3) rotate(15deg);
+            -ms-transform: scale(1.3) rotate(15deg);
+            -o-transform: scale(1.3) rotate(15deg);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomOut:hover img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn:hover img,
+        .hoverimage_greyscaleOut img {
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleOut:hover img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn:hover img,
+        .hoverimage_blurOut img {
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -ms-filter: blur(2px);
+            -o-filter: blur(2px);
+            filter: blur(2px);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurOut:hover img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn:hover img,
+        .hoverimage_blurGreyscaleOut img {
+            -webkit-filter: blur(2px) grayscale(100%);
+            -moz-filter: blur(2px) grayscale(100%);
+            -ms-filter: blur(2px) grayscale(100%);
+            -o-filter: blur(2px) grayscale(100%);
+            filter: blur(2px) grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleOut:hover img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+    </style>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto', sans-serif;
+            src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+        }
+    </style> 
+</head>
+
+<body oncontextmenu="return false" cz-shortcut-listen="true" style="height: 1830px; overflow: hidden scroll; top: 0px;">
+    <div id="website" style="overflow: hidden;">
+        <div id="aCC5" style="position:absolute; z-index:100; left: 50%; top: 0;">
+            <div id="mc5" style="position:absolute; z-index:150; left: -500px; top: 0px;">
+                <div id="423"
+                    style="position: absolute; top: 0px; left: -296px; z-index: 0; transform: translate3d(0px, 0px, 0px); display: block; height: 1344px;">
+                     
+                </div>
+                  <!-- titulo -->
+                <div id="445"
+                    style="position: absolute; top: 188px; left: -162px; z-index: 17; transform: translate3d(0px, 0px, 0px); display: block; height: 82px;">
+                    <div id="testo_445" class="testoc"
+                        style="width: 556px; height: 82px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);">Noticias
+                                    de interés</span><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div> 
+                <div id="41"
+                    style="position: absolute; top: 58px; left: -297px; z-index: 19; transform: translate3d(0px, 0px, 0px); display: block; height: 35px;">
+                    <div id="immaginesingola_41" style="position:absolute;width:1596px;height:35px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 1596px; height: 35px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_41">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:1596px;height:35px;">
+                             
+                        </div>
+                    </div>
+                </div>
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                <div id="930"
+                    style="position: absolute; top: 698px; left: -94px; z-index: 27; transform: translate3d(0px, 0px, 0px); display: block; height: 88px;">
+                    <div id="testo_930" class="testoc"
+                        style="width: 722px; height: 88px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">P</span><span
+                                    style="font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">remian
+                                    a Inversiones Popular como mayor colocador del mercado primario en 2013</span><span
+                                    style="font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="931"
+                    style="position: absolute; top: 195px; left: 808px; z-index: 28; transform: translate3d(0px, 0px, 0px); display: block; height: 50px;">
+                    <div id="testo_931" class="testoc"
+                        style="width: 264px; height: 50px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">T</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">ambién
+                                    te puede interesar</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="935"
+                    style="position: absolute; top: 670px; left: -95px; z-index: 29; transform: translate3d(0px, 0px, 0px); display: block; height: 39px;">
+                    <div id="testo_935" class="testoc"
+                        style="width: 103px; height: 39px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 11px; font-family: Roboto; color: rgb(101, 101, 101);">2</span><span
+                                    style="font-size: 11px; font-family: Roboto; color: rgb(101, 101, 101);">7
+                                    marzo 2018</span><span
+                                    style="font-size: 11px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="936"
+                    style="position: absolute; top: 670px; left: 537px; z-index: 30; transform: translate3d(0px, 0px, 0px); display: block; height: 40px;">
+                    <div id="testo_936" class="testoc"
+                        style="width: 127px; height: 40px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: right;"><span
+                                    style="text-transform: uppercase; font-weight: bold; font-size: 11px; font-family: Roboto; color: rgb(0, 137, 175);">N</span><span
+                                    style="text-transform: uppercase; font-weight: bold; font-size: 11px; font-family: Roboto; color: rgb(0, 137, 175);">ota
+                                    de prensa</span><span
+                                    style="text-transform: uppercase; font-weight: bold; font-size: 11px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="938"
+                    style="position: absolute; top: 771px; left: -96px; z-index: 31; transform: translate3d(0px, 0px, 0px); display: block; height: 355px;">
+                    <div id="testo_938" class="testoc"
+                        style="width: 759px; height: 355px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(101, 101, 101);">L</span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(101, 101, 101);">a
+                                    Superintendencia de Valores (SIV) reconoció hoy a Inversiones Popular, filial del
+                                    Grupo Popular, como gestor de negocios del mercado de valores durante el año 2013.
+                                </span></p>
+                            <p><span
+                                    style="line-height: 16px; font-size: 13px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span></p>
+                            <p><span
+                                    style="line-height: 16px; font-size: 13px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    distinción la obtuvo al registrar el mayor monto colocado en el mercado primario,
+                                    por un valor de RD$4,852 millones, equivalente al 30.92 por ciento del total
+                                    negociado, según los datos de la SIV.
+                                </span></p>
+                            <p><span
+                                    style="line-height: 16px; font-size: 13px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span></p>
+                            <p><span
+                                    style="line-height: 16px; font-size: 13px; font-family: Roboto; color: rgb(101, 101, 101);">El
+                                    galardón fue recibido por la gerente general de Inversiones Popular, Laura
+                                    Hernández, y la vicepresidente del Área de Tesorería y Mercado de Capitales del
+                                    Banco Popular Dominicano, María Angélica Haza, de manos del señor Ervin Novas,
+                                    presidente del Consejo Nacional de Valores (CNV).
+                                </span></p>
+                            <p><span
+                                    style="line-height: 16px; font-size: 13px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span></p>
+                            <p><span
+                                    style="line-height: 16px; font-size: 13px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    filial del Grupo Popular cerró 2013 con excelentes resultados, que evidenciaron un
+                                    crecimiento sostenido. Durante el pasado ejercicio, Inversiones Popular abrió un
+                                    total de 2,415 nuevas cuentas de corretaje, cifra que representa el 49.7% de las
+                                    aperturas totales de cuentas en el mercado.</span><span
+                                    style="line-height: 16px; font-size: 13px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="940"
+                    style="position: absolute; top: 1140px; left: -96px; z-index: 33; transform: translate3d(0px, 0px, 0px); display: block; height: 49px;">
+                    <div id="testo_940" class="testoc"
+                        style="width: 363px; height: 49px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-weight: bold; font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);">C</span><span
+                                    style="font-weight: bold; font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);">omparte
+                                    este artículo</span><span
+                                    style="font-weight: bold; font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                </span><span
+                                    style="font-weight: bold; font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                        </span><span
+                                    style="font-weight: bold; font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="941"
+                    style="position: absolute; top: 196px; left: 577px; z-index: 34; transform: translate3d(0px, 0px, 0px); display: block; height: 49px;">
+                    <div id="testo_941" class="testoc"
+                        style="width: 113px; height: 49px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: right;"><span
+                                    style="font-weight: bold; font-size: 11px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-weight: bold; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                     </span><span
+                                    style="font-weight: bold; font-size: 17px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="942"
+                    style="position: absolute; top: 198px; left: -116px; z-index: 35; transform: translate3d(0px, 0px, 0px); display: block; height: 43px;">
+                    <div id="testo_942" class="testoc"
+                        style="width: 108px; height: 43px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 11px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 11px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span><span
+                                    style="font-weight: bold; font-size: 11px; font-family: Roboto; color: rgb(101, 101, 101);">Volver
+                                    atrás</span><span
+                                    style="font-weight: bold; font-size: 11px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="945"
+                    style="position: absolute; top: 229px; left: 809px; z-index: 36; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_945" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_945">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 301px; height: 345px;">
+                                <img src="public/componenti/945/f1/333.png?no=13211907"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="946"
+                    style="position: absolute; top: 229px; left: 809px; z-index: 37; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_946" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_946">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 301px; height: 185px;">
+                                <img src="public/componenti/946/f1/334.png?no=13211907"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="947"
+                    style="position: absolute; top: 436px; left: 828px; z-index: 38; transform: translate3d(0px, 0px, 0px); display: block; height: 38px;">
+                    <div id="testo_947" class="testoc"
+                        style="width: 178px; height: 38px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Nota
+                                    de prensa</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="948"
+                    style="position: absolute; top: 461px; left: 829px; z-index: 39; transform: translate3d(0px, 0px, 0px); display: block; height: 117px;">
+                    <div id="testo_948" class="testoc"
+                        style="width: 260px; height: 117px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">P</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">remian
+                                    a Inversiones Popular como mayor colocador del mercado primario en 2013
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    Superintendencia de Valores (SIV) </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">reconoció
+                                    hoy a Inversiones Popular.</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div> 
+                <div id="950"
+                    style="position: absolute; top: 405px; left: 1070px; z-index: 41; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_950" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                 
+                 
+                <div id="953"
+                    style="position: absolute; top: 816px; left: 828px; z-index: 44; transform: translate3d(0px, 0px, 0px); display: block; height: 38px;">
+                    <div id="testo_953" class="testoc"
+                        style="width: 178px; height: 38px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Nota
+                                    de prensa</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="954"
+                    style="position: absolute; top: 841px; left: 829px; z-index: 45; transform: translate3d(0px, 0px, 0px); display: block; height: 117px;">
+                    <div id="testo_954" class="testoc"
+                        style="width: 260px; height: 117px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">P</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">remian
+                                    a Inversiones Popular como mayor colocador del mercado primario en 2013
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    Superintendencia de Valores (SIV) </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">reconoció
+                                    hoy a Inversiones Popular.</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                 
+                <div id="956"
+                    style="position: absolute; top: 786px; left: 1070px; z-index: 47; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_956" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="957"
+                    style="position: absolute; top: 992px; left: 809px; z-index: 48; transform: translate3d(0px, 0px, 0px); display: block; height: 345px;">
+                    <div id="immaginesingola_957" style="position:absolute;width:301px;height:345px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 345px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_957">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:345px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 301px; height: 345px;">
+                                <img src="public/componenti/957/f1/351.png?no=1550682721"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="958"
+                    style="position: absolute; top: 992px; left: 809px; z-index: 49; transform: translate3d(0px, 0px, 0px); display: block; height: 185px;">
+                    <div id="immaginesingola_958" style="position:absolute;width:301px;height:185px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 301px; height: 185px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_958">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:301px;height:185px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 301px; height: 185px;">
+                                <img src="public/componenti/958/f1/352.png?no=1550682721"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="959"
+                    style="position: absolute; top: 1200px; left: 828px; z-index: 50; transform: translate3d(0px, 0px, 0px); display: block; height: 38px;">
+                    <div id="testo_959" class="testoc"
+                        style="width: 178px; height: 38px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">27
+                                    MAR 2017 - </span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);">Nota
+                                    de prensa</span><span
+                                    style="text-transform: uppercase; font-size: 8px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="960"
+                    style="position: absolute; top: 1225px; left: 829px; z-index: 51; transform: translate3d(0px, 0px, 0px); display: block; height: 117px;">
+                    <div id="testo_960" class="testoc"
+                        style="width: 260px; height: 117px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">P</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(0, 57, 121);">remian
+                                    a Inversiones Popular como mayor colocador del mercado primario en 2013
+                                </span><span
+                                    style="font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 16px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">La
+                                    Superintendencia de Valores (SIV) </span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);">reconoció
+                                    hoy a Inversiones Popular.</span><span
+                                    style="line-height: 13px; font-size: 10px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>  
+                <div id="962"
+                    style="position: absolute; top: 1169px; left: 1070px; z-index: 53; transform: translate3d(0px, 0px, 0px); display: block; height: 45px;">
+                    <div id="testo_962" class="testoc"
+                        style="width: 26px; height: 45px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <style>
+            body {
+                margin-bottom: 32px;
+            }
+        </style>
+       
+    </div> 
+</body>
+
+</html>

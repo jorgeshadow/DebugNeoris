@@ -1,0 +1,1060 @@
+<html lang="es">
+
+<head>
+    <title>16-como-invertir3-ipsa</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="all">
+    <meta name="viewport" content="width=1024">
+    <style>
+       
+        @font-face {
+            font-family: Roboto;
+            src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+        }
+   
+
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        * {
+            margin: 0;
+            /*text-rendering: optimizeLegibility;*/
+        }
+
+        #mc5 h1,
+        #mc5 h2,
+        #mc5 h3 {
+            font-weight: 400;
+        }
+
+        body,
+        #website {
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background: #ffffff;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            /*-webkit-font-smoothing: antialiased;*/
+            -webkit-overflow-scrolling: touch;
+        }
+
+        div,
+        span {
+            max-height: 100000px;
+        }
+
+        .testoc {
+            line-height: 1.2;
+            vertical-align: top;
+        }
+
+        body.flazioNoScroll {
+            overflow: hidden !important;
+        }
+
+        body *::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        body *::-webkit-scrollbar-thumb {
+            border-radius: 15px;
+            background: rgba(153, 156, 161, 0.8);
+        }
+
+        body *::-webkit-scrollbar-track {
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .yscrollbar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            background: red;
+            z-index: 30000;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            /* Background */
+            background: rgba(0, 0, 0, 0.2);
+            /* Border bottom light */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            /* Inner top shadow */
+            -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .yscroller {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+
+        .yscroller:hover {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+
+        .yscroller:active {
+            background: #003399;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+    </style>
+   
+    
+
+
+
+
+    <style type="text/css">
+        .comp_ombrasemplice {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 4px 12px -6px;
+            z-index: -1;
+        }
+
+        .comp_ombradestra,
+        .comp_ombradestrasinistra,
+        .comp_ombrasinistra,
+        .comp_ombrataglio {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            height: 20px;
+            width: 100%;
+            overflow: hidden
+        }
+
+        .comp_ombradestra:after,
+        .comp_ombradestrasinistra:after,
+        .comp_ombradestrasinistra:before,
+        .comp_ombrasinistra:before {
+            bottom: 30px;
+            width: calc(50% - 10px);
+            max-width: 300px;
+            box-shadow: 0 15px 10px;
+            position: absolute;
+            height: 20px;
+            content: "";
+            z-index: -1
+        }
+
+        .comp_ombradestrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestrasinistra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrataglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            height: 20px;
+            bottom: 20px;
+            left: 15px;
+            right: 15px;
+            border-radius: 100px/10px
+        }
+
+        .comp_effettoglossy,
+        .comp_ombraannullata,
+        .comp_ombrainterna,
+        .comp_ombralunga {
+            width: 100%;
+            height: 100%;
+            position: absolute
+        }
+
+        .comp_ombralunga {
+            bottom: 0;
+            box-shadow: 1px 1px, 2px 2px, 3px 3px, 4px 4px, 5px 5px, 6px 6px, 7px 7px, 8px 8px, 9px 9px, 10px 10px, 11px 11px, 12px 12px, 13px 13px, 14px 14px, 15px 15px, 16px 16px, 17px 17px, 18px 18px, 19px 19px, 20px 20px, 21px 21px, 22px 22px, 23px 23px, 24px 24px, 25px 25px, 26px 26px, 27px 27px, 28px 28px, 29px 29px, 30px 30px, 31px 31px, 32px 32px, 33px 33px, 34px 34px, 35px 35px, 36px 36px, 37px 37px, 38px 38px, 39px 39px, 40px 40px, 41px 41px, 42px 42px, 43px 43px, 44px 44px, 45px 45px, 46px 46px, 47px 47px, 48px 48px, 49px 49px, 50px 50px, 51px 51px, 52px 52px, 53px 53px, 54px 54px, 55px 55px, 56px 56px, 57px 57px, 58px 58px, 59px 59px, 60px 60px
+        }
+
+        .comp_ombrainterna {
+            bottom: 0;
+            box-shadow: inset 0 0 10px
+        }
+
+        .comp_effettoglossy {
+            bottom: 0;
+            box-shadow: 0 1px 4px, inset 0 0 40px
+        }
+
+        .comp_doppiotaglio:after,
+        .comp_doppiotaglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglio:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_doppiotaglioverticale:after,
+        .comp_doppiotaglioverticale:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 10px;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglioverticale:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_ombraannullata {
+            bottom: 0;
+            box-shadow: 0 4px 12px -6px;
+            left: 0;
+            border-radius: inherit
+        }
+
+        .comp_ombraannullata:after,
+        .comp_ombraannullata:before {
+            display: none !important
+        }
+
+        .shadow_tendina {
+            width: 230px;
+            height: 134px;
+            transform: scale(.3);
+            transform-origin: top left;
+            background: #1287cb;
+            color: rgba(0, 0, 0, .4);
+            position: absolute;
+            margin-bottom: 50px
+        }
+
+        .shadow_tendina.active {
+            background: #0ea7ff
+        }
+    </style>
+    <style type="text/css">
+        .hoverimage_opacityIn img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityIn:hover img,
+        .hoverimage_opacityOut img {
+            opacity: 1;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityOut:hover img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn:hover img,
+        .hoverimage_zoomOut img {
+            transform: scale(1.3);
+            -webkit-transform: scale(1.3);
+            -moz-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            -o-transform: scale(1.3);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomOut:hover img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn:hover img,
+        .hoverimage_rotateZoomOut img {
+            transform: scale(1.3) rotate(15deg);
+            -webkit-transform: scale(1.3) rotate(15deg);
+            -moz-transform: scale(1.3) rotate(15deg);
+            -ms-transform: scale(1.3) rotate(15deg);
+            -o-transform: scale(1.3) rotate(15deg);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomOut:hover img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn:hover img,
+        .hoverimage_greyscaleOut img {
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleOut:hover img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn:hover img,
+        .hoverimage_blurOut img {
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -ms-filter: blur(2px);
+            -o-filter: blur(2px);
+            filter: blur(2px);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurOut:hover img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn:hover img,
+        .hoverimage_blurGreyscaleOut img {
+            -webkit-filter: blur(2px) grayscale(100%);
+            -moz-filter: blur(2px) grayscale(100%);
+            -ms-filter: blur(2px) grayscale(100%);
+            -o-filter: blur(2px) grayscale(100%);
+            filter: blur(2px) grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleOut:hover img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+    </style>
+    
+</head>
+
+<body oncontextmenu="return false" cz-shortcut-listen="true" style="height: 2510px; overflow: hidden scroll; top: 0px;">
+    <div id="website" style="overflow: hidden;">
+        <div id="aCC5" style="position:absolute; z-index:100; left: 50%; top: 0;">
+            <div id="mc5" style="position:absolute; z-index:150; left: -500px; top: 0px;">
+
+
+
+                                                                 <!-- TITULO -->
+                <div id="368"
+                    style="position: absolute; top: 187px; left: -165px; z-index: 17; transform: translate3d(0px, 0px, 0px); display: block; height: 93px;">
+                    <div id="testo_368" class="testoc"
+                        style="width: 465px; height: 93px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);">¿Cómo
+                                    invertir?</span><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--------------------------------------Iconos flechas-------------------------------------->
+                                                     <!-- Flecha derecha -->
+                <div id="370"
+                    style="position: absolute; top: 1889px; left: 848px; z-index: 19; transform: translate3d(0px, 0px, 0px); display: block; height: 60px;">
+                    <div id="testo_370" class="testoc"
+                        style="width: 40px; height: 60px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 28px; font-family: Roboto; color: rgb(255, 255, 255);"></span><span
+                                    style="text-transform: uppercase; font-size: 28px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                                                        <!-- Flecha Izquierda -->
+                 <div id="372"
+                    style="position: absolute; top: 1889px; left: 120px; z-index: 21; transform: translate3d(0px, 0px, 0px); display: block; height: 60px;">
+                    <div id="testo_372" class="testoc"
+                        style="width: 40px; height: 60px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 28px; font-family: Roboto; color: rgb(255, 255, 255);"></span><span
+                                    style="text-transform: uppercase; font-size: 28px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boton solicita mas informacion -->
+                <div id="374"
+                    style="position: absolute; top: 665px; left: 896px; z-index: 23; transform: translate3d(0px, 0px, 0px); display: block; height: 46px;">
+                    <div id="testo_374" class="testoc"
+                        style="width: 245px; height: 46px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: Roboto; color: rgb(255, 255, 255);">Solicita
+                                    más información</span><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Textos -->
+                <div id="375"
+                    style="position: absolute; top: 881px; left: -1px; z-index: 24; transform: translate3d(0px, 0px, 0px); display: block; height: 904px;">
+                    <div id="testo_375" class="testoc"
+                        style="width: 594px; height: 904px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);"></span><span
+                                    style="font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);">
+                                </span><span
+                                    style="font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);">Títulos
+                                    del Banco Central
+                                </span><span
+                                    style="font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);">Bonos
+                                    de deuda emitidos por periodos mayores a un año y hasta 7 años.
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);"></span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);">
+                                    Bonos de Ministerio de Hacienda
+                                </span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);">Bonos
+                                    de deuda emitidos a plazos mayores a un año y hasta 15 años.
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);"></span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);">
+                                </span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);">Bonos
+                                    Soberanos
+                                </span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);">Bonos
+                                    de deuda emitidos por el estado dominicano en mercados internacionales.
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);"></span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);">
+                                </span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);">Bonos
+                                    Corporativos</span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);">
+                                </span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);">Las
+                                    empresas pueden emitir bonos de corto plazo y largo plazo para financiar sus
+                                    operaciones diarias e iniciar nuevos proyectos.
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);"></span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);">
+                                </span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(0, 85, 139);">Derivados
+                                    (Forward Popular)
+                                </span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);">Inversión
+                                    de compraventa, en la que el cliente adquiere un Título-Valor pactando
+                                    simultáneamente su venta con el puesto de bolsa en una fecha futura. Los
+                                    rendimientos se reciben al vencimiento.</span><span
+                                    style="line-height: 27px; font-size: 22px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            
+             
+                <!----------------------------------------Textos REnta Variable----------------------------------------->
+                <div id="384"
+                    style="position: absolute; top: 894px; left: 734px; z-index: 33; transform: translate3d(0px, 0px, 0px); display: block; height: 132px;">
+                    <div id="testo_384" class="testoc"
+                        style="width: 124px; height: 132px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Riesgo
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Rentabilidad
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Plazo</span><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="385"
+                    style="position: absolute; top: 894px; left: 947px; z-index: 34; transform: translate3d(0px, 0px, 0px); display: block; height: 132px;">
+                    <div id="testo_385" class="testoc"
+                        style="width: 66px; height: 132px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Bajo
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Media
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Medio</span><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+               <!---------------------------------------------------------------------------------------->
+                <div id="394"
+                    style="position: absolute; top: 1060px; left: 734px; z-index: 43; transform: translate3d(0px, 0px, 0px); display: block; height: 132px;">
+                    <div id="testo_394" class="testoc"
+                        style="width: 124px; height: 132px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Riesgo
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Rentabilidad
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Plazo</span><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="395"
+                    style="position: absolute; top: 1060px; left: 947px; z-index: 44; transform: translate3d(0px, 0px, 0px); display: block; height: 132px;">
+                    <div id="testo_395" class="testoc"
+                        style="width: 66px; height: 132px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Bajo
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Media
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Medio</span><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+               
+                <!------------------------------------------------------------------------------------------------------>
+                <div id="404"
+                    style="position: absolute; top: 1226px; left: 734px; z-index: 53; transform: translate3d(0px, 0px, 0px); display: block; height: 132px;">
+                    <div id="testo_404" class="testoc"
+                        style="width: 124px; height: 132px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Riesgo
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Rentabilidad
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Plazo</span><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="405"
+                    style="position: absolute; top: 1226px; left: 947px; z-index: 54; transform: translate3d(0px, 0px, 0px); display: block; height: 132px;">
+                    <div id="testo_405" class="testoc"
+                        style="width: 66px; height: 132px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Bajo
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Media
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Medio</span><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+               <!-------------------------------------------------------------------------------------------------------------->
+                <div id="414"
+                    style="position: absolute; top: 1389px; left: 734px; z-index: 63; transform: translate3d(0px, 0px, 0px); display: block; height: 132px;">
+                    <div id="testo_414" class="testoc"
+                        style="width: 124px; height: 132px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Riesgo
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Rentabilidad
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Plazo</span><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="415"
+                    style="position: absolute; top: 1389px; left: 947px; z-index: 64; transform: translate3d(0px, 0px, 0px); display: block; height: 132px;">
+                    <div id="testo_415" class="testoc"
+                        style="width: 66px; height: 132px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Bajo
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Media
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Medio</span><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!----------------------------------------------------------------------------------------------------->
+                <div id="424"
+                    style="position: absolute; top: 1585px; left: 734px; z-index: 73; transform: translate3d(0px, 0px, 0px); display: block; height: 132px;">
+                    <div id="testo_424" class="testoc"
+                        style="width: 124px; height: 132px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Riesgo
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Rentabilidad
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);">Plazo</span><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(109, 109, 109);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="425"
+                    style="position: absolute; top: 1585px; left: 947px; z-index: 74; transform: translate3d(0px, 0px, 0px); display: block; height: 132px;">
+                    <div id="testo_425" class="testoc"
+                        style="width: 66px; height: 132px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Bajo
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Media
+                                </span></p>
+                            <p style="text-align: center;"><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);">Medio</span><span
+                                    style="line-height: 35px; font-size: 17px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--texto------------------------------------------------->
+                <div id="672"
+                    style="position: absolute; top: 770px; left: 114px; z-index: 90; transform: translate3d(0px, 0px, 0px); display: block; height: 60px;">
+                    <div id="testo_672" class="testoc"
+                        style="width: 142px; height: 60px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 25px; font-family: Roboto; color: rgb(101, 101, 101);">Renta
+                                    Fija</span><span
+                                    style="font-size: 25px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--texto------------------------------------------------->
+                <div id="673"
+                    style="position: absolute; top: 770px; left: 723px; z-index: 91; transform: translate3d(0px, 0px, 0px); display: block; height: 54px;">
+                    <div id="testo_673" class="testoc"
+                        style="width: 205px; height: 54px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 25px; font-family: Roboto; color: rgb(101, 101, 101);">Renta
+                                    Variable</span><span
+                                    style="font-size: 25px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--texto------------------------------------------------->
+                <div id="695"
+                    style="position: absolute; top: 534px; left: 1025px; z-index: 92; transform: translate3d(0px, 0px, 0px); display: block; height: 77px;">
+                    <div id="testo_695" class="testoc"
+                        style="width: 106px; height: 77px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(203, 203, 203);">Empieza a
+                                    invertir</span><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(203, 203, 203);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="696"
+                    style="position: absolute; top: 536px; left: 966px; z-index: 93; transform: translate3d(0px, 0px, 0px); display: block; height: 76px;">
+                    <div id="testo_696" class="testoc"
+                        style="width: 46px; height: 76px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="text-transform: uppercase; font-size: 53px; font-family: Roboto; color: rgb(203, 203, 203);">4</span><span
+                                    style="text-transform: uppercase; font-size: 53px; font-family: Roboto; color: rgb(203, 203, 203);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--texto------------------------------------------------->
+                <div id="697"
+                    style="position: absolute; top: 533px; left: 611px; z-index: 94; transform: translate3d(0px, 0px, 0px); display: block; height: 78px;">
+                    <div id="testo_697" class="testoc"
+                        style="width: 244px; height: 78px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(0, 85, 139);">Conoce
+                                    instrumentos de inversión</span><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(0, 85, 139);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="698"
+                    style="position: absolute; top: 535px; left: 543px; z-index: 95; transform: translate3d(0px, 0px, 0px); display: block; height: 78px;">
+                    <div id="testo_698" class="testoc"
+                        style="width: 45px; height: 78px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="text-transform: uppercase; font-size: 54px; font-family: Roboto; color: rgb(0, 85, 139);">3</span><span
+                                    style="text-transform: uppercase; font-size: 54px; font-family: Roboto; color: rgb(0, 85, 139);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--texto------------------------------------------------->
+                <div id="699"
+                    style="position: absolute; top: 532px; left: 237px; z-index: 96; transform: translate3d(0px, 0px, 0px); display: block; height: 78px;">
+                    <div id="testo_699" class="testoc"
+                        style="width: 199px; height: 78px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(0, 139, 175);">Identifica tu perfil de
+                                    inversionista</span><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(0, 139, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="700"
+                    style="position: absolute; top: 534px; left: 182px; z-index: 97; transform: translate3d(0px, 0px, 0px); display: block; height: 77px;">
+                    <div id="testo_700" class="testoc"
+                        style="width: 45px; height: 77px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: right;"><span
+                                    style="text-transform: uppercase; font-size: 53px; font-family: Roboto; color: rgb(0, 139, 175);">2</span><span
+                                    style="text-transform: uppercase; font-size: 53px; font-family: Roboto; color: rgb(0, 139, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--Texto----------------------------------------------->
+                <div id="704"
+                    style="position: absolute; top: 534px; left: -82px; z-index: 101; transform: translate3d(0px, 0px, 0px); display: block; height: 77px;">
+                    <div id="testo_704" class="testoc"
+                        style="width: 146px; height: 77px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(0, 193, 213);">Define
+                                    tus necesidades</span><span
+                                    style="line-height: 23px; font-size: 20px; font-family: Roboto; color: rgb(0, 193, 213);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="705"
+                    style="position: absolute; top: 534px; left: -134px; z-index: 102; transform: translate3d(0px, 0px, 0px); display: block; height: 77px;">
+                    <div id="testo_705" class="testoc"
+                        style="width: 31px; height: 77px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: right;"><span
+                                    style="text-transform: uppercase; font-size: 53px; font-family: Roboto; color: rgb(0, 193, 213);">1</span><span
+                                    style="text-transform: uppercase; font-size: 53px; font-family: Roboto; color: rgb(0, 193, 213);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+ 
+            </div>
+        </div>
+    </div>  
+</body>
+
+</html>

@@ -1,0 +1,952 @@
+<html lang="es">
+
+<head>
+    <title>09-crea-tu-cuenta-1-persona-form3-ipsa </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1024">
+    <style>
+          @font-face {
+            font-family: 'Roboto', sans-serif;
+            src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        * {
+            margin: 0;
+            /*text-rendering: optimizeLegibility;*/
+        }
+
+        #mc5 h1,
+        #mc5 h2,
+        #mc5 h3 {
+            font-weight: 400;
+        }
+
+        body,
+        #website {
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background: #ffffff;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            /*-webkit-font-smoothing: antialiased;*/
+            -webkit-overflow-scrolling: touch;
+        }
+
+        div,
+        span {
+            max-height: 100000px;
+        }
+
+        .testoc {
+            line-height: 1.2;
+            vertical-align: top;
+        }
+
+        body.flazioNoScroll {
+            overflow: hidden !important;
+        }
+
+        body *::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        body *::-webkit-scrollbar-thumb {
+            border-radius: 15px;
+            background: rgba(153, 156, 161, 0.8);
+        }
+
+        body *::-webkit-scrollbar-track {
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .yscrollbar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            background: red;
+            z-index: 30000;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            /* Background */
+            background: rgba(0, 0, 0, 0.2);
+            /* Border bottom light */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            /* Inner top shadow */
+            -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .yscroller {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+
+        .yscroller:hover {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+
+        .yscroller:active {
+            background: #003399;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+    </style>
+  
+
+    <style type="text/css">
+        .comp_ombrasemplice {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 4px 12px -6px;
+            z-index: -1;
+        }
+
+        .comp_ombradestra,
+        .comp_ombradestrasinistra,
+        .comp_ombrasinistra,
+        .comp_ombrataglio {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            height: 20px;
+            width: 100%;
+            overflow: hidden
+        }
+
+        .comp_ombradestra:after,
+        .comp_ombradestrasinistra:after,
+        .comp_ombradestrasinistra:before,
+        .comp_ombrasinistra:before {
+            bottom: 30px;
+            width: calc(50% - 10px);
+            max-width: 300px;
+            box-shadow: 0 15px 10px;
+            position: absolute;
+            height: 20px;
+            content: "";
+            z-index: -1
+        }
+
+        .comp_ombradestrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestrasinistra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrataglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            height: 20px;
+            bottom: 20px;
+            left: 15px;
+            right: 15px;
+            border-radius: 100px/10px
+        }
+
+        .comp_effettoglossy,
+        .comp_ombraannullata,
+        .comp_ombrainterna,
+        .comp_ombralunga {
+            width: 100%;
+            height: 100%;
+            position: absolute
+        }
+
+        .comp_ombralunga {
+            bottom: 0;
+            box-shadow: 1px 1px, 2px 2px, 3px 3px, 4px 4px, 5px 5px, 6px 6px, 7px 7px, 8px 8px, 9px 9px, 10px 10px, 11px 11px, 12px 12px, 13px 13px, 14px 14px, 15px 15px, 16px 16px, 17px 17px, 18px 18px, 19px 19px, 20px 20px, 21px 21px, 22px 22px, 23px 23px, 24px 24px, 25px 25px, 26px 26px, 27px 27px, 28px 28px, 29px 29px, 30px 30px, 31px 31px, 32px 32px, 33px 33px, 34px 34px, 35px 35px, 36px 36px, 37px 37px, 38px 38px, 39px 39px, 40px 40px, 41px 41px, 42px 42px, 43px 43px, 44px 44px, 45px 45px, 46px 46px, 47px 47px, 48px 48px, 49px 49px, 50px 50px, 51px 51px, 52px 52px, 53px 53px, 54px 54px, 55px 55px, 56px 56px, 57px 57px, 58px 58px, 59px 59px, 60px 60px
+        }
+
+        .comp_ombrainterna {
+            bottom: 0;
+            box-shadow: inset 0 0 10px
+        }
+
+        .comp_effettoglossy {
+            bottom: 0;
+            box-shadow: 0 1px 4px, inset 0 0 40px
+        }
+
+        .comp_doppiotaglio:after,
+        .comp_doppiotaglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglio:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_doppiotaglioverticale:after,
+        .comp_doppiotaglioverticale:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 10px;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglioverticale:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_ombraannullata {
+            bottom: 0;
+            box-shadow: 0 4px 12px -6px;
+            left: 0;
+            border-radius: inherit
+        }
+
+        .comp_ombraannullata:after,
+        .comp_ombraannullata:before {
+            display: none !important
+        }
+
+        .shadow_tendina {
+            width: 230px;
+            height: 134px;
+            transform: scale(.3);
+            transform-origin: top left;
+            background: #1287cb;
+            color: rgba(0, 0, 0, .4);
+            position: absolute;
+            margin-bottom: 50px
+        }
+
+        .shadow_tendina.active {
+            background: #0ea7ff
+        }
+    </style>
+    <style type="text/css">
+        .hoverimage_opacityIn img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityIn:hover img,
+        .hoverimage_opacityOut img {
+            opacity: 1;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityOut:hover img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn:hover img,
+        .hoverimage_zoomOut img {
+            transform: scale(1.3);
+            -webkit-transform: scale(1.3);
+            -moz-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            -o-transform: scale(1.3);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomOut:hover img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn:hover img,
+        .hoverimage_rotateZoomOut img {
+            transform: scale(1.3) rotate(15deg);
+            -webkit-transform: scale(1.3) rotate(15deg);
+            -moz-transform: scale(1.3) rotate(15deg);
+            -ms-transform: scale(1.3) rotate(15deg);
+            -o-transform: scale(1.3) rotate(15deg);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomOut:hover img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn:hover img,
+        .hoverimage_greyscaleOut img {
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleOut:hover img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn:hover img,
+        .hoverimage_blurOut img {
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -ms-filter: blur(2px);
+            -o-filter: blur(2px);
+            filter: blur(2px);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurOut:hover img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn:hover img,
+        .hoverimage_blurGreyscaleOut img {
+            -webkit-filter: blur(2px) grayscale(100%);
+            -moz-filter: blur(2px) grayscale(100%);
+            -ms-filter: blur(2px) grayscale(100%);
+            -o-filter: blur(2px) grayscale(100%);
+            filter: blur(2px) grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleOut:hover img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+    </style> 
+</head>
+
+<body oncontextmenu="return false" cz-shortcut-listen="true" style="height: 1757px; overflow: hidden scroll; top: 0px;">
+    <div id="website" style="overflow: hidden;">
+        <div id="aCC5" style="position:absolute; z-index:100; left: 50%; top: 0;">
+            <div id="mc5" style="position:absolute; z-index:150; left: -500px; top: 0px;">
+                <div id="3246"
+                    style="position: absolute; top: 0px; left: -296px; z-index: 0; transform: translate3d(0px, 0px, 0px); display: block; height: 1464px;">
+                     
+                </div>
+                
+                <div id="3582"
+                    style="position: absolute; top: 1753px; left: 25px; z-index: 2; transform: translate3d(0px, 0px, 0px); display: block; height: 4px;">
+                    <div id="immaginesingola_3582" style="position:absolute;width:952px;height:4px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 952px; height: 4px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_3582">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:952px;height:4px;">
+                            
+                        </div>
+                    </div>
+                </div>
+                 
+                 
+                 
+                
+                
+                <div id="3269"
+                    style="position: absolute; top: 181px; left: 189px; z-index: 14; transform: translate3d(0px, 0px, 0px); display: block; height: 122px;">
+                    <div id="testo_3269" class="testoc"
+                        style="width: 607px; height: 122px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: 'Roboto', sans-serif; color: rgb(0, 57, 121);">cuenta
+                                    de corretaje
+                                </span><span
+                                    style="text-transform: uppercase; font-size: 26px; font-family: 'Roboto', sans-serif; color: rgb(0, 57, 121);"></span>
+                            </p>
+                            <p style="text-align: center;"><span
+                                    style="text-transform: uppercase; line-height: 41px; font-size: 26px; font-family: 'Roboto', sans-serif; color: rgb(0, 57, 121);">Perfil
+                                    inversionista Persona</span><span
+                                    style="text-transform: uppercase; line-height: 41px; font-size: 26px; font-family: 'Roboto', sans-serif; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3592"
+                    style="position: absolute; top: 388px; left: -43px; z-index: 15; transform: translate3d(0px, 0px, 0px); display: block; height: 50px;">
+                    <div id="testo_3592" class="testoc"
+                        style="width: 147px; height: 50px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 22px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">R</span><span
+                                    style="font-size: 22px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">esultados
+                                </span><span
+                                    style="font-size: 22px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3593"
+                    style="position: absolute; top: 654px; left: 552px; z-index: 16; transform: translate3d(0px, 0px, 0px); display: block; height: 43px;">
+                    <div id="immaginesingola_3593" style="position:absolute;width:263px;height:43px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 263px; height: 43px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_3593">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:263px;height:43px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 263px; height: 43px;">
+                                <img src="public/componenti/3593/f1/49.png?no=72543029"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="3594"
+                    style="position: absolute; top: 668px; left: 591px; z-index: 17; transform: translate3d(0px, 0px, 0px); display: block; height: 44px;">
+                    <div id="testo_3594" class="testoc"
+                        style="width: 196px; height: 44px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(255, 255, 255);">Si,
+                                    estoy de acuerdo</span><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3595"
+                    style="position: absolute; top: 654px; left: 161px; z-index: 18; transform: translate3d(0px, 0px, 0px); display: block; height: 43px;">
+                    <div id="immaginesingola_3595" style="position:absolute;width:263px;height:43px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 263px; height: 43px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_3595">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:263px;height:43px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 263px; height: 43px;">
+                                <img src="public/componenti/3595/f1/51.png?no=72543029"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="3596"
+                    style="position: absolute; top: 668px; left: 201px; z-index: 19; transform: translate3d(0px, 0px, 0px); display: block; height: 42px;">
+                    <div id="testo_3596" class="testoc"
+                        style="width: 198px; height: 42px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(255, 255, 255);">No
+                                    estoy de acuerdo</span><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3597"
+                    style="position: absolute; top: 570px; left: 192px; z-index: 20; transform: translate3d(0px, 0px, 0px); display: block; height: 78px;">
+                    <div id="testo_3597" class="testoc"
+                        style="width: 601px; height: 78px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">B</span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">usca
+                                    altos rendimientos, pero con productos de mediano riesgo. Prefieres optar por un
+                                    buen balance rendimiento/seguridad.</span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3598"
+                    style="position: absolute; top: 536px; left: 294px; z-index: 21; transform: translate3d(0px, 0px, 0px); display: block; height: 50px;">
+                    <div id="testo_3598" class="testoc"
+                        style="width: 399px; height: 50px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 22px; font-family: 'Roboto', sans-serif; color: rgb(0, 59, 121);">E</span><span
+                                    style="font-size: 22px; font-family: 'Roboto', sans-serif; color: rgb(0, 59, 121);">res
+                                    un inversionista moderado</span><span
+                                    style="font-size: 22px; font-family: 'Roboto', sans-serif; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3599"
+                    style="position: absolute; top: 471px; left: 245px; z-index: 22; transform: translate3d(0px, 0px, 0px); display: block; height: 50px;">
+                    <div id="testo_3599" class="testoc"
+                        style="width: 513px; height: 50px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">F</span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">avor
+                                    indicar si estas de acuerdo con el perfil indicado</span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3600"
+                    style="position: absolute; top: 990px; left: 88px; z-index: 23; transform: translate3d(0px, 0px, 0px); display: block; height: 43px;">
+                    <div id="immaginesingola_3600" style="position:absolute;width:234px;height:43px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 234px; height: 43px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_3600">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:234px;height:43px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 234px; height: 43px;">
+                                <img src="public/componenti/3600/f1/57.png?no=72543029"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="3601"
+                    style="position: absolute; top: 1005px; left: 125px; z-index: 24; transform: translate3d(0px, 0px, 0px); display: block; height: 42px;">
+                    <div id="testo_3601" class="testoc"
+                        style="width: 171px; height: 42px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(255, 255, 255);">Soy
+                                    conservador</span><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3602"
+                    style="position: absolute; top: 990px; left: 672px; z-index: 25; transform: translate3d(0px, 0px, 0px); display: block; height: 43px;">
+                    <div id="immaginesingola_3602" style="position:absolute;width:192px;height:43px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 192px; height: 43px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_3602">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:192px;height:43px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 192px; height: 43px;">
+                                <img src="public/componenti/3602/f1/59.png?no=72543029"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="3603"
+                    style="position: absolute; top: 1005px; left: 709px; z-index: 26; transform: translate3d(0px, 0px, 0px); display: block; height: 42px;">
+                    <div id="testo_3603" class="testoc"
+                        style="width: 130px; height: 42px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(255, 255, 255);">Soy
+                                    agresivo</span><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3604"
+                    style="position: absolute; top: 878px; left: -19px; z-index: 27; transform: translate3d(0px, 0px, 0px); display: block; height: 101px;">
+                    <div id="testo_3604" class="testoc"
+                        style="width: 460px; height: 101px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">S</span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">i
+                                    tienes poca tolerancia al riesgo, prefieres tener tu dinero seguro, aunque ganes
+                                    menos. Te sueles sustentar de los intereses de tus inversiones.</span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3605"
+                    style="position: absolute; top: 878px; left: 549px; z-index: 28; transform: translate3d(0px, 0px, 0px); display: block; height: 105px;">
+                    <div id="testo_3605" class="testoc"
+                        style="width: 448px; height: 105px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">S</span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">i
+                                    por tu joven edad estás dispuesto a asumir altos riesgos con la finalidad de obtener
+                                    mejores rendimientos y emprender nuevos proyectos. </span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3606"
+                    style="position: absolute; top: 848px; left: 126px; z-index: 29; transform: translate3d(0px, 0px, 0px); display: block; height: 46px;">
+                    <div id="testo_3606" class="testoc"
+                        style="width: 171px; height: 46px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">E</span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">res
+                                    conservador</span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3607"
+                    style="position: absolute; top: 848px; left: 708px; z-index: 30; transform: translate3d(0px, 0px, 0px); display: block; height: 50px;">
+                    <div id="testo_3607" class="testoc"
+                        style="width: 133px; height: 50px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">E</span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">res
+                                    agresivo</span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3608"
+                    style="position: absolute; top: 783px; left: 245px; z-index: 31; transform: translate3d(0px, 0px, 0px); display: block; height: 50px;">
+                    <div id="testo_3608" class="testoc"
+                        style="width: 447px; height: 50px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">F</span><span
+                                    style="font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);">avor
+                                    marcar la opción que mejor te identifique
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 15px; font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);"></span><span
+                                    style="line-height: 15px; font-size: 16px; font-family: 'Roboto', sans-serif; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3609"
+                    style="position: absolute; top: 654px; left: 552px; z-index: 32; transform: translate3d(0px, 0px, 0px); display: block; height: 43px;">
+                    <div id="immaginesingola_3609" style="position:absolute;width:263px;height:43px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 263px; height: 43px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_3609">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:263px;height:43px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 263px; height: 43px;">
+                                <img src="public/componenti/3609/f1/66.png?no=72543029"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="3610"
+                    style="position: absolute; top: 668px; left: 591px; z-index: 33; transform: translate3d(0px, 0px, 0px); display: block; height: 44px;">
+                    <div id="testo_3610" class="testoc"
+                        style="width: 196px; height: 44px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(255, 255, 255);">Si,
+                                    estoy de acuerdo</span><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="3314"
+                    style="position: absolute; top: 1163px; left: 812px; z-index: 34; transform: translate3d(0px, 0px, 0px); display: block; height: 68px;">
+                    <div id="immaginesingola_3314" style="position:absolute;width:87px;height:68px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 87px; height: 68px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_3314">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:87px;height:68px;">
+                            <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:87px;height:68px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 87px; height: 68px;">
+                                <img src="https://dabuttonfactory.com/button.png?t=%3E&f=Roboto-Bold&ts=34&tc=fff&tshs=1&tshc=000&hp=33&vp=8&c=25&bgt=unicolored&bgc=f90"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="3316"
+                    style="position: absolute; top: 1163px; left: 89px; z-index: 36; transform: translate3d(0px, 0px, 0px); display: block; height: 68px;">
+                    <div id="immaginesingola_3316" style="position:absolute;width:87px;height:68px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 87px; height: 68px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_3316">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:87px;height:68px;">
+                            <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:87px;height:68px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 87px; height: 68px;">
+                                <img src="https://dabuttonfactory.com/button.png?t=%3C&f=Roboto-Bold&ts=34&tc=fff&tshs=1&tshc=000&hp=33&vp=8&c=25&bgt=unicolored&bgc=f90"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                        </div>
+                    </div>
+                </div> 
+                 
+                
+                
+                <div id="3454"
+                    style="position: absolute; top: 391px; left: 641px; z-index: 48; transform: translate3d(0px, 0px, 0px); display: block; height: 49px;">
+                    <div id="testo_3454" class="testoc"
+                        style="width: 406px; height: 49px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: right;"><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);">Reanudar
+                                    solicitud </span><span
+                                    style="text-transform: uppercase; font-size: 17px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);">|</span><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);">
+                                    Continuar más tarde</span><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: 'Roboto', sans-serif; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <style>
+            body {
+                margin-bottom: 32px;
+            }
+        </style>
+        
+    </div> 
+</body>
+
+</html>

@@ -1,0 +1,1566 @@
+<html lang="es">
+
+<head>
+    <title>15-fatca-ipsa</title>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=1024">
+    <style>
+
+        @font-face {
+            font-family: Roboto;
+            src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+        }
+
+
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        * {
+            margin: 0;
+            /*text-rendering: optimizeLegibility;*/
+        }
+
+        #mc5 h1,
+        #mc5 h2,
+        #mc5 h3 {
+            font-weight: 400;
+        }
+
+        body,
+        #website {
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background: #ffffff;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            /*-webkit-font-smoothing: antialiased;*/
+            -webkit-overflow-scrolling: touch;
+        }
+
+        div,
+        span {
+            max-height: 100000px;
+        }
+
+        .testoc {
+            line-height: 1.2;
+            vertical-align: top;
+        }
+
+        body.flazioNoScroll {
+            overflow: hidden !important;
+        }
+
+        body *::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        body *::-webkit-scrollbar-thumb {
+            border-radius: 15px;
+            background: rgba(153, 156, 161, 0.8);
+        }
+
+        body *::-webkit-scrollbar-track {
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .yscrollbar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            background: red;
+            z-index: 30000;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            /* Background */
+            background: rgba(0, 0, 0, 0.2);
+            /* Border bottom light */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            /* Inner top shadow */
+            -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .yscroller {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+
+        .yscroller:hover {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+
+        .yscroller:active {
+            background: #003399;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+    </style>
+     
+    </style>
+    <script>function tracker(page) { _paq.push(['setCustomUrl', '/' + page]); _paq.push(['setDocumentTitle', window.document.title]); _paq.push(['trackPageView']); } var _paq = _paq || []; /*_paq.push(['trackPageView']);*/ _paq.push(['enableLinkTracking']); (function () { var u = "//www.sbbanalytics.com/"; _paq.push(['setTrackerUrl', u + 'js/']); _paq.push(['setSiteId', '6672']); var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0]; g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'js/'; s.parentNode.insertBefore(g, s); })();</script>
+ 
+  
+    <style type="text/css">
+        .comp_ombrasemplice {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 4px 12px -6px;
+            z-index: -1;
+        }
+
+        .comp_ombradestra,
+        .comp_ombradestrasinistra,
+        .comp_ombrasinistra,
+        .comp_ombrataglio {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            height: 20px;
+            width: 100%;
+            overflow: hidden
+        }
+
+        .comp_ombradestra:after,
+        .comp_ombradestrasinistra:after,
+        .comp_ombradestrasinistra:before,
+        .comp_ombrasinistra:before {
+            bottom: 30px;
+            width: calc(50% - 10px);
+            max-width: 300px;
+            box-shadow: 0 15px 10px;
+            position: absolute;
+            height: 20px;
+            content: "";
+            z-index: -1
+        }
+
+        .comp_ombradestrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestrasinistra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrataglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            height: 20px;
+            bottom: 20px;
+            left: 15px;
+            right: 15px;
+            border-radius: 100px/10px
+        }
+
+        .comp_effettoglossy,
+        .comp_ombraannullata,
+        .comp_ombrainterna,
+        .comp_ombralunga {
+            width: 100%;
+            height: 100%;
+            position: absolute
+        }
+
+        .comp_ombralunga {
+            bottom: 0;
+            box-shadow: 1px 1px, 2px 2px, 3px 3px, 4px 4px, 5px 5px, 6px 6px, 7px 7px, 8px 8px, 9px 9px, 10px 10px, 11px 11px, 12px 12px, 13px 13px, 14px 14px, 15px 15px, 16px 16px, 17px 17px, 18px 18px, 19px 19px, 20px 20px, 21px 21px, 22px 22px, 23px 23px, 24px 24px, 25px 25px, 26px 26px, 27px 27px, 28px 28px, 29px 29px, 30px 30px, 31px 31px, 32px 32px, 33px 33px, 34px 34px, 35px 35px, 36px 36px, 37px 37px, 38px 38px, 39px 39px, 40px 40px, 41px 41px, 42px 42px, 43px 43px, 44px 44px, 45px 45px, 46px 46px, 47px 47px, 48px 48px, 49px 49px, 50px 50px, 51px 51px, 52px 52px, 53px 53px, 54px 54px, 55px 55px, 56px 56px, 57px 57px, 58px 58px, 59px 59px, 60px 60px
+        }
+
+        .comp_ombrainterna {
+            bottom: 0;
+            box-shadow: inset 0 0 10px
+        }
+
+        .comp_effettoglossy {
+            bottom: 0;
+            box-shadow: 0 1px 4px, inset 0 0 40px
+        }
+
+        .comp_doppiotaglio:after,
+        .comp_doppiotaglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglio:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_doppiotaglioverticale:after,
+        .comp_doppiotaglioverticale:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 10px;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglioverticale:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_ombraannullata {
+            bottom: 0;
+            box-shadow: 0 4px 12px -6px;
+            left: 0;
+            border-radius: inherit
+        }
+
+        .comp_ombraannullata:after,
+        .comp_ombraannullata:before {
+            display: none !important
+        }
+
+        .shadow_tendina {
+            width: 230px;
+            height: 134px;
+            transform: scale(.3);
+            transform-origin: top left;
+            background: #1287cb;
+            color: rgba(0, 0, 0, .4);
+            position: absolute;
+            margin-bottom: 50px
+        }
+
+        .shadow_tendina.active {
+            background: #0ea7ff
+        }
+    </style>
+    <style type="text/css">
+        .hoverimage_opacityIn img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityIn:hover img,
+        .hoverimage_opacityOut img {
+            opacity: 1;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityOut:hover img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn:hover img,
+        .hoverimage_zoomOut img {
+            transform: scale(1.3);
+            -webkit-transform: scale(1.3);
+            -moz-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            -o-transform: scale(1.3);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomOut:hover img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn:hover img,
+        .hoverimage_rotateZoomOut img {
+            transform: scale(1.3) rotate(15deg);
+            -webkit-transform: scale(1.3) rotate(15deg);
+            -moz-transform: scale(1.3) rotate(15deg);
+            -ms-transform: scale(1.3) rotate(15deg);
+            -o-transform: scale(1.3) rotate(15deg);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomOut:hover img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn:hover img,
+        .hoverimage_greyscaleOut img {
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleOut:hover img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn:hover img,
+        .hoverimage_blurOut img {
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -ms-filter: blur(2px);
+            -o-filter: blur(2px);
+            filter: blur(2px);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurOut:hover img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn:hover img,
+        .hoverimage_blurGreyscaleOut img {
+            -webkit-filter: blur(2px) grayscale(100%);
+            -moz-filter: blur(2px) grayscale(100%);
+            -ms-filter: blur(2px) grayscale(100%);
+            -o-filter: blur(2px) grayscale(100%);
+            filter: blur(2px) grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleOut:hover img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+    </style>
+    <style type="text/css">
+        @font-face {
+            font-family: fontawesome;
+            src: url('//www.flazio.com/componenti/font/fontawesome.woff');
+        }
+    </style>
+    <link href="//www.flazio.com/componenti/flaziobn/style.css" rel="stylesheet">
+</head>
+
+<body oncontextmenu="return false" cz-shortcut-listen="true" style="height: 3098px; overflow: hidden scroll; top: 0px;">
+    <div id="website" style="overflow: hidden;">
+        <div id="aCC5" style="position:absolute; z-index:100; left: 50%; top: 0;">
+            <div id="mc5" style="position:absolute; z-index:150; left: -500px; top: 0px;">
+                <div id="5248"
+                    style="position: absolute; top: 0px; left: -296px; z-index: 0; transform: translate3d(0px, 0px, 0px); display: block; height: 3084px;">
+                    <div id="immaginesingola_5248" style="position:absolute;width:1593px;height:3084px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 1593px; height: 3084px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_5248">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:1593px;height:3084px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 1593px; height: 3084px;">
+                                <img src="public/componenti/5248/f1/0.png?no=77611742"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="18"
+                    style="position: absolute; top: 2664px; left: -310px; z-index: 1; transform: translate3d(0px, 0px, 0px); display: block; height: 434px;">
+                    <div id="immaginesingola_18" style="position:absolute;width:1621px;height:434px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 1621px; height: 434px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_18">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:1621px;height:434px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/18/f1/23.png?no=1550688734">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="5249"
+                    style="position: absolute; top: 2804px; left: -165px; z-index: 2; transform: translate3d(0px, 0px, 0px); display: block; height: 132px;">
+                    <div id="testo_5249" class="testoc"
+                        style="width: 391px; height: 132px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">(809)
+                                    544-5724
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">info@inversionespopular.com.do
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                     </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">Av.
+                                    John F. Kennedy No. 20, Torre Popular, 3er Piso.
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                    Santo Domingo, República Dominicana.</span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5250"
+                    style="position: absolute; top: 3020px; left: 25px; z-index: 3; transform: translate3d(0px, 0px, 0px); display: block; height: 4px;">
+                    <div id="immaginesingola_5250" style="position:absolute;width:952px;height:4px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 952px; height: 4px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_5250">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:952px;height:4px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 952px; height: 4px;">
+                                <img src="public/componenti/5250/f1/5.png?no=1550688734"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="21"
+                    style="position: absolute; top: 3042px; left: 241px; z-index: 4; transform: translate3d(0px, 0px, 0px); display: block; height: 44px;">
+                    <div id="testo_21" class="testoc"
+                        style="width: 528px; height: 44px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">Inversiones
+                                    Popular, S.A. - Puesto de Bolsa | Filial del Grupo Popular, S. A.</span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5251"
+                    style="position: absolute; top: 2756px; left: -165px; z-index: 5; transform: translate3d(0px, 0px, 0px); display: block; height: 48px;">
+                    <div id="testo_5251" class="testoc"
+                        style="width: 142px; height: 48px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);">C</span><span
+                                    style="font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);">ONTÁCTANOS</span><span
+                                    style="font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5252"
+                    style="position: absolute; top: 2806px; left: 376px; z-index: 6; transform: translate3d(0px, 0px, 0px); display: block; height: 182px;">
+                    <div id="testo_5252" class="testoc"
+                        style="width: 186px; height: 182px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">FATCA
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">Publicaciones
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">¿Cómo
+                                    Invertir?
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">Politica
+                                    de Privacidad
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">Términos
+                                    y condiciones</span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="24"
+                    style="position: absolute; top: 2805px; left: 720px; z-index: 7; transform: translate3d(0px, 0px, 0px); display: block; height: 183px;">
+                    <div id="testo_24" class="testoc"
+                        style="width: 228px; height: 183px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 12px; font-family: fontawesome; color: rgb(255, 255, 255);"></span><span
+                                    style="font-size: 12px; font-family: fontawesome; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">Conócenos
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: fontawesome; color: rgb(255, 255, 255);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: fontawesome; color: rgb(255, 255, 255);"></span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: fontawesome; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">Productos
+                                    y Servicios
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: fontawesome; color: rgb(255, 255, 255);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: fontawesome; color: rgb(255, 255, 255);"></span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: fontawesome; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">Solicita
+                                    tu cuenta de corretaje
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: fontawesome; color: rgb(255, 255, 255);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: fontawesome; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">Boletín
+                                    Económico
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: fontawesome; color: rgb(255, 255, 255);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: fontawesome; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);">Preguntas
+                                    Frecuentes
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span><span
+                                    style="line-height: 13px; font-size: 12px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5253"
+                    style="position: absolute; top: 2760px; left: 376px; z-index: 8; transform: translate3d(0px, 0px, 0px); display: block; height: 44px;">
+                    <div id="testo_5253" class="testoc"
+                        style="width: 159px; height: 44px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);">I</span><span
+                                    style="text-transform: uppercase; font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);">nformaciones</span><span
+                                    style="text-transform: uppercase; font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5254"
+                    style="position: absolute; top: 2760px; left: 720px; z-index: 9; transform: translate3d(0px, 0px, 0px); display: block; height: 44px;">
+                    <div id="testo_5254" class="testoc"
+                        style="width: 220px; height: 44px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);">I</span><span
+                                    style="text-transform: uppercase; font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);">nversiones
+                                    Popular</span><span
+                                    style="text-transform: uppercase; font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5255"
+                    style="position: absolute; top: 2937px; left: -156px; z-index: 10; transform: translate3d(0px, 0px, 0px); display: block; height: 46px;">
+                    <div id="testo_5255" class="testoc"
+                        style="width: 27px; height: 46px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="text-transform: uppercase; font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                    </span><span
+                                    style="text-transform: uppercase; font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5256"
+                    style="position: absolute; top: 2937px; left: -116px; z-index: 11; transform: translate3d(0px, 0px, 0px); display: block; height: 47px;">
+                    <div id="testo_5256" class="testoc"
+                        style="width: 20px; height: 47px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="text-transform: uppercase; font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);"></span><span
+                                    style="text-transform: uppercase; font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5257"
+                    style="position: absolute; top: 2937px; left: -79px; z-index: 12; transform: translate3d(0px, 0px, 0px); display: block; height: 46px;">
+                    <div id="testo_5257" class="testoc"
+                        style="width: 26px; height: 46px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="text-transform: uppercase; font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);"></span><span
+                                    style="text-transform: uppercase; font-size: 15px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="30"
+                    style="position: absolute; top: 2928px; left: -165px; z-index: 13; transform: translate3d(0px, 0px, 0px); display: block; height: 34px;">
+                    <div id="immaginesingola_30" style="position:absolute;width:34px;height:34px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 34px; height: 34px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_30">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:34px;height:34px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/30/f1/37.png?no=1550688734">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="5258"
+                    style="position: absolute; top: 2928px; left: -127px; z-index: 14; transform: translate3d(0px, 0px, 0px); display: block; height: 34px;">
+                    <div id="immaginesingola_5258" style="position:absolute;width:35px;height:34px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 35px; height: 34px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_5258">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:35px;height:34px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 35px; height: 34px;">
+                                <img src="public/componenti/5258/f1/17.png?no=1550688734"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="5259"
+                    style="position: absolute; top: 2928px; left: -88px; z-index: 15; transform: translate3d(0px, 0px, 0px); display: block; height: 34px;">
+                    <div id="immaginesingola_5259" style="position:absolute;width:34px;height:34px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 34px; height: 34px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_5259">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:34px;height:34px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 34px; height: 34px;">
+                                <img src="public/componenti/5259/f1/18.png?no=1550688734"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="34"
+                    style="position: absolute; top: 2700px; left: 1144px; z-index: 16; transform: translate3d(0px, 0px, 0px); display: block; height: 49px;">
+                    <div id="testo_34" class="testoc"
+                        style="width: 30px; height: 49px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-weight: bold; font-size: 17px; font-family: fontawesome; color: rgb(255, 255, 255);"></span><span
+                                    style="font-weight: bold; font-size: 17px; font-family: fontawesome; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5260"
+                    style="position: absolute; top: 638px; left: -309px; z-index: 17; transform: translate3d(0px, 0px, 0px); display: block; height: 583px;">
+                    <div id="immaginesingola_5260" style="position:absolute;width:1635px;height:583px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 1635px; height: 583px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_5260">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:1635px;height:583px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 1635px; height: 583px;">
+                                <img src="public/componenti/5260/f1/30.png?no=77611742"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="5262"
+                    style="position: absolute; top: 788px; left: 531px; z-index: 18; transform: translate3d(0px, 0px, 0px); display: block; height: 55px;">
+                    <div id="testo_5262" class="testoc"
+                        style="width: 257px; height: 55px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 20px; font-family: Roboto; color: rgb(0, 57, 121);">PERSONAS
+                                    FÍSICAS</span><span
+                                    style="text-transform: uppercase; font-size: 20px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5263"
+                    style="position: absolute; top: 788px; left: -165px; z-index: 19; transform: translate3d(0px, 0px, 0px); display: block; height: 55px;">
+                    <div id="testo_5263" class="testoc"
+                        style="width: 295px; height: 55px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 20px; font-family: Roboto; color: rgb(0, 57, 121);">PERSONAS
+                                    JURÍDICAS</span><span
+                                    style="text-transform: uppercase; font-size: 20px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5264"
+                    style="position: absolute; top: 257px; left: -165px; z-index: 20; transform: translate3d(0px, 0px, 0px); display: block; height: 52px;">
+                    <div id="testo_5264" class="testoc"
+                        style="width: 423px; height: 52px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 57, 121);">(</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 57, 121);">FOREIGN
+                                    ACCOUNT TAX COMPLIANCE ACT)</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5265"
+                    style="position: absolute; top: 362px; left: -165px; z-index: 21; transform: translate3d(0px, 0px, 0px); display: block; height: 105px;">
+                    <div id="testo_5265" class="testoc"
+                        style="width: 1059px; height: 105px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">F</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">ATCA
+                                    significa Acto para el Cumplimiento Fiscal de Cuentas Extranjeras, de acuerdo a sus
+                                    siglas en inglés. Se trata de una legislación estadounidense aprobada en marzo de
+                                    2010, cuya intención es prevenir que los contribuyentes estadounidenses evadan
+                                    impuestos utilizando cuentas financieras fuera de los Estados Unidos.</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5266"
+                    style="position: absolute; top: 199px; left: -162px; z-index: 22; transform: translate3d(0px, 0px, 0px); display: block; height: 71px;">
+                    <div id="testo_5266" class="testoc"
+                        style="width: 166px; height: 71px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);">FATCA</span><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="40"
+                    style="position: absolute; top: -10px; left: -303px; z-index: 23; transform: translate3d(0px, 0px, 0px); display: block; height: 71px;">
+                    <div id="immaginesingola_40" style="position:absolute;width:1618px;height:71px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 1618px; height: 71px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_40">
+                            <div class="sh_comp comp_ombrasemplice"
+                                style="color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:1618px;height:71px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/40/f1/55.png?no=77611742">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="41"
+                    style="position: absolute; top: 58px; left: -297px; z-index: 24; transform: translate3d(0px, 0px, 0px); display: block; height: 35px;">
+                    <div id="immaginesingola_41" style="position:absolute;width:1596px;height:35px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 1596px; height: 35px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_41">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:1596px;height:35px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/41/f1/57.png?no=77611742">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="43"
+                    style="position: absolute; top: 70px; left: -329px; z-index: 25; transform: translate3d(0px, 0px, 0px); display: block; height: 41px;">
+                    <div id="testo_43" class="testoc"
+                        style="width: 1617px; height: 41px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: right;"><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">8.63%
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">BSRD2027
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">118.8103</span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: fontawesome; color: rgb(255, 255, 255);"></span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">10.50%
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">NO170125
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">103.3533</span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: fontawesome; color: rgb(255, 255, 255);"></span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">11.00%
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">NO300922
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">107.5056</span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: fontawesome; color: rgb(255, 255, 255);"></span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">12.00%
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">CI070122
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">109.5101</span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: fontawesome; color: rgb(255, 255, 255);"></span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">11.38%
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">MH12029
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">111.9676</span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: fontawesome; color: rgb(255, 255, 255);"></span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">12.00%
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">MH12032
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">116.0272</span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: fontawesome; color: rgb(255, 255, 255);"></span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">10.50%
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">NO170125
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">103.3533</span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: fontawesome; color: rgb(255, 255, 255);"></span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">11.00%
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">NO300922
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">107.5056</span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: fontawesome; color: rgb(255, 255, 255);"></span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">12.00%
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">CI070122
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">109.5101
+                                </span><span
+                                    style="font-size: 8px; font-family: fontawesome; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">10
+                                    MAY 2018</span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: fontawesome; color: rgb(255, 255, 255);"></span><span
+                                    style="font-size: 8px; font-family: fontawesome; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="font-size: 8px; font-family: fontawesome; color: rgb(255, 255, 255);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="46"
+                    style="position: absolute; top: 66px; left: 1264px; z-index: 26; transform: translate3d(0px, 0px, 0px); display: block; height: 19px;">
+                    <div id="immaginesingola_46" style="position:absolute;width:19px;height:19px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 19px; height: 19px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_46">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:19px;height:19px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: none;">
+                                <img
+                                    src="http://www.testparaprobar.flazio.com/public/componenti/46/f1/64.png?no=77611742">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="5392"
+                    style="position: absolute; top: 19px; left: 1120px; z-index: 27; transform: translate3d(0px, 0px, 0px); display: block; height: 49px;">
+                    <div id="testo_5392" class="testoc"
+                        style="width: 35px; height: 49px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 22px; font-family: Roboto; color: rgb(0, 57, 121);"></span><span
+                                    style="font-size: 22px; font-family: Roboto; color: rgb(0, 57, 121);"></span><span
+                                    style="font-size: 22px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="272"
+                    style="position: absolute; top: 21px; left: 836px; z-index: 28; transform: translate3d(0px, 0px, 0px); display: block; height: 47px;">
+                    <div id="testo_272" class="testoc"
+                        style="width: 264px; height: 47px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: center;"><span
+                                    style="font-size: 14px; font-family: fontawesome; color: rgb(0, 57, 121);">
+                                </span><span
+                                    style="font-size: 14px; font-family: Roboto; color: rgb(0, 57, 121);">
+                                </span><span
+                                    style="font-size: 14px; font-family: Roboto; color: rgb(0, 57, 121);">Solicita
+                                    tu cuenta de corretaje</span><span
+                                    style="font-size: 14px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5396"
+                    style="position: absolute; top: 12px; left: -165px; z-index: 29; transform: translate3d(0px, 0px, 0px); display: block; height: 34px;">
+                    <div id="immaginesingola_5396" style="position:absolute;width:239px;height:34px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 239px; height: 34px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_5396">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:239px;height:34px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 239px; height: 34px;">
+                                <img src="public/componenti/5396/f1/299.png?no=77611742"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="5397"
+                    style="position: absolute; top: 1411px; left: -140px; z-index: 30; transform: translate3d(0px, 0px, 0px); display: block; height: 547px;">
+                    <div id="testo_5397" class="testoc"
+                        style="width: 1219px; height: 547px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">E</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">l
+                                    Acta para el Cumplimiento Fiscal de Cuentas Extranjeras (FATCA, por sus siglas en
+                                    inglés) promueve el pago de impuestos a los Estados Unidos de América y como parte
+                                    de dicho proceso exige requerir a los clientes ciertas informaciones para validar si
+                                    son ciudadanos o residentes estadounidenses. Este proceso impacta a:
+                                </span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    Instituciones financieras de todo el mundo.
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    Personas con ciudadanía o residencia estadounidense.
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    Un poder sobre la cuenta a nombre de una persona con dirección en los Estados
+                                    Unidos.
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    Empresas constituidas en los EE.UU.
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    Personas con indicios de ciudadanía estadounidense. FATCA identifica como posible
+                                    indicio alguno de los siguientes
+                                </span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(255, 255, 255);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(255, 255, 255);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(255, 255, 255);">
+                                </span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">personas
+                                    o entidades:
+                                </span><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    </span><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    Personas con documento de residencia o ciudadanía estadounidense.
+                                </span><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    </span><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    Lugar de nacimiento en Estados Unidos.
+                                </span><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    </span><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    Dirección postal, domicilio o teléfono en Estados Unidos.
+                                </span><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    </span><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    Instrucciones recurrentes de transferencia de fondos a los Estados Unidos.
+                                </span><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    </span><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    Un poder sobre la cuenta a nombre de una persona con dirección en los Estados
+                                    Unidos.
+                                </span><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    </span><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                    Mantener una cuenta Hold Mail (para retención de cuentas) o In Care Of (por cuenta
+                                    de otra persona) en los EE.UU.</span><span
+                                    style="line-height: 28px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5398"
+                    style="position: absolute; top: 1367px; left: -165px; z-index: 31; transform: translate3d(0px, 0px, 0px); display: block; height: 1122px;">
+                    <div id="testo_5398" class="testoc"
+                        style="width: 1163px; height: 1122px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    ¿A quiénes impacta la ley?
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                </span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    ¿Cuándo entra en vigencia la legislación?
+                                </span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    ¿Hay otros países que ya aplican la legislación FATCA en sus territorios?
+                                </span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    ¿Cuál es la situación de FATCA en la república dominicana?
+                                </span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    ¿Qué debe hacer grupo popular para cumplir con la regulación?
+                                </span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    ¿De qué modo le puede afectar a usted?
+                                </span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    ¿Cuándo se produce un cambio de circunstancias y por qué es importante notificarlo?
+                                </span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    ¿De qué modo puede afectar a las instituciones financieras el no cumplimiento con
+                                    FATCA?
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 62px; font-size: 22px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5399"
+                    style="position: absolute; top: 861px; left: 531px; z-index: 32; transform: translate3d(0px, 0px, 0px); display: block; height: 144px;">
+                    <div id="testo_5399" class="testoc"
+                        style="width: 529px; height: 144px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                    Instrucciones formulario W-8BEN (Ingles)
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                </span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                    Instrucciones formulario W-9, persona física y jurídica
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                </span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                    Formulario W-8BEN</span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5400"
+                    style="position: absolute; top: 861px; left: -165px; z-index: 33; transform: translate3d(0px, 0px, 0px); display: block; height: 241px;">
+                    <div id="testo_5400" class="testoc"
+                        style="width: 445px; height: 241px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                    Instrucciones formularios W-8BEN-E (Ingles)
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                </span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                    Formulario W-8BEN-E
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                </span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                    Formulario W-8EXP
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                </span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                    Formulario W-8ECI
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                </span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);">
+                                    Formulario W-8IMY</span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="5401"
+                    style="position: absolute; top: 468px; left: -165px; z-index: 34; transform: translate3d(0px, 0px, 0px); display: block; height: 46px;">
+                    <div id="testo_5401" class="testoc"
+                        style="width: 208px; height: 46px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);">Glosario
+                                    de términos</span><span
+                                    style="text-transform: uppercase; font-size: 13px; font-family: Roboto; color: rgb(0, 137, 175);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            body {
+                margin-bottom: 32px;
+            }
+        </style>
+      
+    </div>
+    <div id="fb_pixel"></div>
+    <img height="1" width="1"
+        style="border-style: none; display: none !important;" alt=""
+        src="//insight.adsrvr.org/track/evnt/?adv=863f42s&amp;ct=0:4gebjxe&amp;fmt=3" hidden="">
+    <div class="loaderGenerale"
+        style="z-index: 106; box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 37px -4px; margin-left: -150px;display:none;position:absolute; width:300px; height:95px; top:50%; left:50%; margin-top:-50px; background-image:url(//www.flazio.com/componenti/scrittori/ingrandita/img/loader.gif); background-position:center center; background-repeat: no-repeat; background-color:#fff; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;">
+    </div>
+    <div style="background-size: 100%; width: 100%; height: 657px; position: fixed; margin: 0px; top: 0px; left: 0px; z-index: 0;"
+        id="bodybk"></div><iframe src="https://www.flazio.com/server.html"
+        style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe>
+</body>
+
+</html>

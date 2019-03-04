@@ -1,0 +1,879 @@
+<html lang="es">
+
+<head>
+    <title>09-crea-tu-cuenta-1-empresa2-ipsa </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1024">
+    <style>
+         @font-face {
+            font-family: Roboto;
+            src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+        }
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        * {
+            margin: 0;
+            /*text-rendering: optimizeLegibility;*/
+        }
+
+        #mc5 h1,
+        #mc5 h2,
+        #mc5 h3 {
+            font-weight: 400;
+        }
+
+        body,
+        #website {
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background: #ffffff;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            /*-webkit-font-smoothing: antialiased;*/
+            -webkit-overflow-scrolling: touch;
+        }
+
+        div,
+        span {
+            max-height: 100000px;
+        }
+
+        .testoc {
+            line-height: 1.2;
+            vertical-align: top;
+        }
+
+        body.flazioNoScroll {
+            overflow: hidden !important;
+        }
+
+        body *::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        body *::-webkit-scrollbar-thumb {
+            border-radius: 15px;
+            background: rgba(153, 156, 161, 0.8);
+        }
+
+        body *::-webkit-scrollbar-track {
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .yscrollbar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            background: red;
+            z-index: 30000;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            /* Background */
+            background: rgba(0, 0, 0, 0.2);
+            /* Border bottom light */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            /* Inner top shadow */
+            -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .yscroller {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+
+        .yscroller:hover {
+            background: #bbd;
+            position: relative;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+
+        .yscroller:active {
+            background: #003399;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            cursor: pointer;
+        }
+    </style>
+    
+
+    <style type="text/css">
+        .comp_ombrasemplice {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 4px 12px -6px;
+            z-index: -1;
+        }
+
+        .comp_ombradestra,
+        .comp_ombradestrasinistra,
+        .comp_ombrasinistra,
+        .comp_ombrataglio {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            height: 20px;
+            width: 100%;
+            overflow: hidden
+        }
+
+        .comp_ombradestra:after,
+        .comp_ombradestrasinistra:after,
+        .comp_ombradestrasinistra:before,
+        .comp_ombrasinistra:before {
+            bottom: 30px;
+            width: calc(50% - 10px);
+            max-width: 300px;
+            box-shadow: 0 15px 10px;
+            position: absolute;
+            height: 20px;
+            content: "";
+            z-index: -1
+        }
+
+        .comp_ombradestrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestrasinistra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrasinistra:before {
+            left: 10px;
+            transform: rotate(-3deg)
+        }
+
+        .comp_ombradestra:after {
+            right: 10px;
+            transform: rotate(3deg)
+        }
+
+        .comp_ombrataglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            height: 20px;
+            bottom: 20px;
+            left: 15px;
+            right: 15px;
+            border-radius: 100px/10px
+        }
+
+        .comp_effettoglossy,
+        .comp_ombraannullata,
+        .comp_ombrainterna,
+        .comp_ombralunga {
+            width: 100%;
+            height: 100%;
+            position: absolute
+        }
+
+        .comp_ombralunga {
+            bottom: 0;
+            box-shadow: 1px 1px, 2px 2px, 3px 3px, 4px 4px, 5px 5px, 6px 6px, 7px 7px, 8px 8px, 9px 9px, 10px 10px, 11px 11px, 12px 12px, 13px 13px, 14px 14px, 15px 15px, 16px 16px, 17px 17px, 18px 18px, 19px 19px, 20px 20px, 21px 21px, 22px 22px, 23px 23px, 24px 24px, 25px 25px, 26px 26px, 27px 27px, 28px 28px, 29px 29px, 30px 30px, 31px 31px, 32px 32px, 33px 33px, 34px 34px, 35px 35px, 36px 36px, 37px 37px, 38px 38px, 39px 39px, 40px 40px, 41px 41px, 42px 42px, 43px 43px, 44px 44px, 45px 45px, 46px 46px, 47px 47px, 48px 48px, 49px 49px, 50px 50px, 51px 51px, 52px 52px, 53px 53px, 54px 54px, 55px 55px, 56px 56px, 57px 57px, 58px 58px, 59px 59px, 60px 60px
+        }
+
+        .comp_ombrainterna {
+            bottom: 0;
+            box-shadow: inset 0 0 10px
+        }
+
+        .comp_effettoglossy {
+            bottom: 0;
+            box-shadow: 0 1px 4px, inset 0 0 40px
+        }
+
+        .comp_doppiotaglio:after,
+        .comp_doppiotaglio:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglio:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_doppiotaglioverticale:after,
+        .comp_doppiotaglioverticale:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 0 20px;
+            top: 10px;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            border-radius: 100px/10px
+        }
+
+        .comp_doppiotaglioverticale:after {
+            right: 10px;
+            left: auto;
+            transform: skew(8deg) rotate(3deg)
+        }
+
+        .comp_ombraannullata {
+            bottom: 0;
+            box-shadow: 0 4px 12px -6px;
+            left: 0;
+            border-radius: inherit
+        }
+
+        .comp_ombraannullata:after,
+        .comp_ombraannullata:before {
+            display: none !important
+        }
+
+        .shadow_tendina {
+            width: 230px;
+            height: 134px;
+            transform: scale(.3);
+            transform-origin: top left;
+            background: #1287cb;
+            color: rgba(0, 0, 0, .4);
+            position: absolute;
+            margin-bottom: 50px
+        }
+
+        .shadow_tendina.active {
+            background: #0ea7ff
+        }
+    </style>
+    <style type="text/css">
+        .hoverimage_opacityIn img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityIn:hover img,
+        .hoverimage_opacityOut img {
+            opacity: 1;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_opacityOut:hover img {
+            opacity: .5;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomIn:hover img,
+        .hoverimage_zoomOut img {
+            transform: scale(1.3);
+            -webkit-transform: scale(1.3);
+            -moz-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            -o-transform: scale(1.3);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_zoomOut:hover img {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomIn:hover img,
+        .hoverimage_rotateZoomOut img {
+            transform: scale(1.3) rotate(15deg);
+            -webkit-transform: scale(1.3) rotate(15deg);
+            -moz-transform: scale(1.3) rotate(15deg);
+            -ms-transform: scale(1.3) rotate(15deg);
+            -o-transform: scale(1.3) rotate(15deg);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_rotateZoomOut:hover img {
+            transform: scale(1) rotate(0);
+            -webkit-transform: scale(1) rotate(0);
+            -moz-transform: scale(1) rotate(0);
+            -ms-transform: scale(1) rotate(0);
+            -o-transform: scale(1) rotate(0);
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -moz-transform-origin: center;
+            -ms-transform-origin: center;
+            -o-transform-origin: center;
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleIn:hover img,
+        .hoverimage_greyscaleOut img {
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_greyscaleOut:hover img {
+            -webkit-filter: grayscale(0);
+            -moz-filter: grayscale(0);
+            -ms-filter: grayscale(0);
+            -o-filter: grayscale(0);
+            filter: grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurIn:hover img,
+        .hoverimage_blurOut img {
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -ms-filter: blur(2px);
+            -o-filter: blur(2px);
+            filter: blur(2px);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurOut:hover img {
+            -webkit-filter: blur(0);
+            -moz-filter: blur(0);
+            -ms-filter: blur(0);
+            -o-filter: blur(0);
+            filter: blur(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleIn:hover img,
+        .hoverimage_blurGreyscaleOut img {
+            -webkit-filter: blur(2px) grayscale(100%);
+            -moz-filter: blur(2px) grayscale(100%);
+            -ms-filter: blur(2px) grayscale(100%);
+            -o-filter: blur(2px) grayscale(100%);
+            filter: blur(2px) grayscale(100%);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+
+        .hoverimage_blurGreyscaleOut:hover img {
+            -webkit-filter: blur(0) grayscale(0);
+            -moz-filter: blur(0) grayscale(0);
+            -ms-filter: blur(0) grayscale(0);
+            -o-filter: blur(0) grayscale(0);
+            filter: blur(0) grayscale(0);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out
+        }
+    </style>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto', sans-serif;
+            src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+        }
+    </style> 
+</head>
+
+<body oncontextmenu="return false" cz-shortcut-listen="true" style="height: 2483px; overflow: hidden scroll; top: 0px;">
+    <div id="website" style="overflow: hidden;">
+        <div id="aCC5" style="position:absolute; z-index:100; left: 50%; top: 0;">
+            <div id="mc5" style="position:absolute; z-index:150; left: -500px; top: 0px;">
+                 
+                <div id="18"
+                    style="position: absolute; top: 2049px; left: -310px; z-index: 1; transform: translate3d(0px, 0px, 0px); display: block; height: 434px;">
+                    <div id="immaginesingola_18" style="position:absolute;width:1621px;height:434px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 1621px; height: 434px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_18">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+               
+                
+                
+                
+                
+                
+                 
+                
+                
+                
+                
+                
+                
+                <!-- TITULO -->
+                <div id="2093"
+                    style="position: absolute; top: 199px; left: -165px; z-index: 18; transform: translate3d(0px, 0px, 0px); display: block; height: 71px;">
+                    <div id="testo_2093" class="testoc"
+                        style="width: 936px; height: 71px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);">Solicita
+                                    tu cuenta de corretaje</span><span
+                                    style="text-transform: uppercase; font-size: 44px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- boton anterior -->
+                <div id="2358"
+                    style="position: absolute; top: 1258px; left: 94px; z-index: 19; transform: translate3d(0px, 200px, 0px); display: block; height: 68px;">
+                    <div id="immaginesingola_2358" style="position:absolute;width:87px;height:68px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 87px; height: 68px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_2358">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:87px;height:68px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 87px; height: 68px;">
+                                <img src="https://dabuttonfactory.com/button.png?t=%3C&f=Roboto-Bold&ts=34&tc=fff&tshs=1&tshc=000&hp=33&vp=8&c=25&bgt=unicolored&bgc=f90"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- boton siguiente -->
+                <div id="2358"
+                    style="position: absolute; top: 1258px; left: 800px; z-index: 19; transform: translate3d(0px, 200px, 0px); display: block; height: 68px;">
+                    <div id="immaginesingola_2358" style="position:absolute;width:87px;height:68px;">
+                        <div class="cornice"
+                            style="pointer-events: none; position: absolute; width: 87px; height: 68px; background-image: none; z-index: -3; top: 0px; left: 0px;"
+                            id="noframe_2358">
+                            <div class="sh_comp comp_none"
+                                style="color: rgba(0, 0, 0, 0.4); background-color: rgba(0, 0, 0, 0);"></div>
+                        </div>
+                        <div class="uno hoverimage_nessuno"
+                            style="overflow:hidden; z-index:0;position:absolute;width:87px;height:68px;">
+                            <div
+                                style="pointer-events: none; position: absolute; top: 0px; left: 0px; z-index: 1; display: block; width: 87px; height: 68px;">
+                                <img src="https://dabuttonfactory.com/button.png?t=%3E&f=Roboto-Bold&ts=34&tc=fff&tshs=1&tshc=000&hp=33&vp=8&c=25&bgt=unicolored&bgc=f90"
+                                    style="position: absolute; left: 0px; top: 0px;"></div>
+                        </div>
+                    </div>
+                </div>
+                 
+                
+               
+                <div id="2758"
+                    style="position: absolute; top: 374px; left: -165px; z-index: 28; transform: translate3d(0px, 0px, 0px); display: block; height: 61px;">
+                    <div id="testo_2758" class="testoc"
+                        style="width: 748px; height: 61px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="text-transform: uppercase; font-size: 20px; font-family: Roboto; color: rgb(0, 57, 121);">Empresa
+                                    o Institución - </span><span
+                                    style="text-transform: uppercase; font-size: 20px; font-family: Roboto; color: rgb(0, 57, 121);">S</span><span
+                                    style="text-transform: uppercase; font-size: 20px; font-family: Roboto; color: rgb(0, 57, 121);">OCIEDADES
+                                    ANÓNIMAS (S.A.)</span><span
+                                    style="text-transform: uppercase; font-size: 20px; font-family: Roboto; color: rgb(0, 57, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+               
+                <div id="2761"
+                    style="position: absolute; top: 563px; left: 712px; z-index: 31; transform: translate3d(0px, 0px, 0px); display: block; height: 602px;">
+                    <div id="testo_2761" class="testoc"
+                        style="width: 453px; height: 602px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">T</span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">odos
+                                    los documentos constitutivos deben estar vigentes, sellados por Cámara de Comercio y
+                                    Producción correspondiente y Certificados por el Presidente y el Secretario.
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">Los
+                                    documentos podrán estar en original, en copia o por algún medio electrónico. Si
+                                    provienen del extranjero pueden aceptarse siempre que estén apostillados, es decir
+                                    legalizados a nivel internacional; y si están en un idioma distinto al español deben
+                                    estar traducidos por un intérprete judicial.
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">Cuando
+                                    exista dificultad para obtener la documentación requerida para identificar el
+                                    Beneficiario Final, la institución puede proveerle un modelo de Declaración de
+                                    Beneficiario Final, que deberá ser firmado por la persona autorizada por la entidad.
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);">Para
+                                    personas que tengan doble nacionalidad, incluyendo la nacionalidad dominicana, se
+                                    deberán requerir los documentos de identidad de cada nacionalidad. </span><span
+                                    style="line-height: 19px; font-size: 16px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="2762"
+                    style="position: absolute; top: 553px; left: -166px; z-index: 32; transform: translate3d(0px, 0px, 0px); display: block; height: 1181px;">
+                    <div id="testo_2762" class="testoc"
+                        style="width: 840px; height: 1181px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Estatutos Sociales;
+                                </span><span
+                                    style="font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Documentos constitutivos;
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Registro Mercantil Actualizado;
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Certificación emitida por la Oficina Virtual de la DGII sobre la identidad
+                                    tributaria de la </span><span
+                                    style="line-height: 25px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">sociedad
+                                    (RNC);
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Estados Financieros Auditados al último ejercicio fiscal;
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Última Asamblea General Ordinaria Anual de Accionistas;
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Acta que designa personas con capacidad para abrir cuentas de corretaje. Incluir
+                                </span><span
+                                    style="line-height: 25px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">nómina
+                                    de presencia de esta acta, para constatar que haya contado con el quórum requerido.
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Acta de Asamblea General Ordinaria de Accionistas que designa el último Consejo de
+                                </span><span
+                                    style="line-height: 25px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">Administración.
+                                    En caso de que la elección se haya llevado a cabo en la última Asamblea General
+                                    Ordinaria Anual de Accionistas, solo la copia de esa acta será requerida;
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Copia del Listado de socios o accionistas.
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Copia de dos (2) documentos de identidad de los Directores, Socios o Accionistas,
+                                </span><span
+                                    style="line-height: 25px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">Representantes
+                                    Legales y firmantes autorizados en la cuenta. En el caso de personas dominicanas, la
+                                    cédula de identidad y electoral y licencia o pasaporte; en el caso de extranjeros:
+                                    si son residentes, la copia de la cédula de identidad y pasaporte; y para
+                                    extranjeros no residentes, copia del documento conforme a su estatus migratorio o el
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 25px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">documento
+                                    de identidad del país de origen y el pasaporte.
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    De ser requerido, referencias comerciales (de proveedores o clientes) y referencias
+                                </span><span
+                                    style="line-height: 25px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">bancarias.
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                </span><span
+                                    style="line-height: 22px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">En
+                                    aquellos casos en los cuales un socio o accionista, con al menos diez por ciento
+                                </span><span
+                                    style="line-height: 25px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">(10%)
+                                    de participación accionaria, sea una Persona Jurídica deberá requerirse de esta
+                                    entidad los siguientes documentos certificados por la Cámara de Comercio y
+                                    Producción correspondiente:
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 25px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    - Copia de los Estatutos Sociales.
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 25px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    - Copia del Acta de Asamblea de socios o accionistas que designa la persona física
+                                    que representa la entidad o el Consejo de Administración o directivo de la entidad;
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 25px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    - Copia de la Lista de socios o accionistas;
+                                </span></p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 25px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    - Copia de los documentos de identidad de accionistas o socios y directivos.
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Formulario FATCA, el cual le será provisto por Inversiones Popular.
+                                </span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                            <p style="text-align: left;"><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);">
+                                    Formularios de apertura debidamente completados.</span><span
+                                    style="line-height: 34px; font-size: 16px; font-family: Roboto; color: rgb(0, 59, 121);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="2763"
+                    style="position: absolute; top: 463px; left: -165px; z-index: 33; transform: translate3d(0px, 0px, 0px); display: block; height: 54px;">
+                    <div id="testo_2763" class="testoc"
+                        style="width: 131px; height: 54px; position: absolute; max-height: 999999px; overflow: hidden; overflow-wrap: break-word;">
+                        <div>
+                            <p style="text-align: left;"><span
+                                    style="font-size: 19px; font-family: Roboto; color: rgb(101, 101, 101);">Requisitos:</span><span
+                                    style="font-size: 19px; font-family: Roboto; color: rgb(101, 101, 101);"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <style>
+            body {
+                margin-bottom: 32px;
+            }
+        </style>
+        
+    </div>
+    <div id="fb_pixel"></div>
+   
+    <div class="loaderGenerale"
+        style="z-index: 106; box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 37px -4px; margin-left: -150px;display:none;position:absolute; width:300px; height:95px; top:50%; left:50%; margin-top:-50px; background-image:url(//www.flazio.com/componenti/scrittori/ingrandita/img/loader.gif); background-position:center center; background-repeat: no-repeat; background-color:#fff; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;">
+    </div>
+    <div style="background-size: 100%; width: 100%; height: 657px; position: fixed; margin: 0px; top: 0px; left: 0px; z-index: 0;"
+        id="bodybk"></div><iframe src="https://www.flazio.com/server.html"
+        style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe>
+</body>
+
+</html>

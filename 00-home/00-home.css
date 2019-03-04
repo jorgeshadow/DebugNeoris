@@ -1,0 +1,147 @@
+.invertirDivLogos {
+    margin-top: 100px;
+    margin-bottom: 25px;
+    font-size: 1vw;   
+}
+.fontSizeListaInvertir {
+    font-size: 3.4vw;
+    text-align: center;
+    margin: auto;
+}
+.marginAutoListaInvertir {
+    margin: auto;
+}
+.fontSizeLogosInvertir {
+    font-size: 7vw;
+    text-align: center;
+}
+.noticesContainer {
+    margin-top: 6%;
+    background-color: #EEEEEE;
+    /* margin: 15% 7% 15% 7%; */
+    border: #EEEEEE solid;
+    border-width: 130px 70px 130px 70px
+}
+.valorInversion {
+    border: #ffffff solid;
+    border-width: 130px 70px 60px 70px
+}
+.valorInversionLogo {
+    font-size: 12vw;
+    text-align: start;
+}
+.nuestrasEmisiones {
+    margin-top: 6%;
+    margin-bottom: 7%;
+    margin-left: 2%;
+    background-color: #EEEEEE;
+
+}
+.backGroundEmisiones {
+    background-color: #EEEEEE; 
+    border: #EEEEEE 10px solid;
+}
+.herramientasLogo {
+    font-size: 4vw;
+    text-align: center;
+    color: #008BAF;
+}
+.herramientasDescripcion {
+    color: #008BAF;
+    font-size: 0.8rem;   
+    text-align: center;
+}
+.herramientasDiv {
+    margin-top: 4%;
+    margin-bottom: 2%;
+
+}
+.footerHome {
+    /* margin: 3% 5% 5% 5%; */
+    font-size: 0.8rem;
+    margin-top: 5%;
+    margin-bottom: 7%;
+    margin-left: 6%;
+    background-color: #003C7B;  
+    color: #ffffff
+}
+.bordesRedesSociales {
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 2px solid #ffffff;
+    margin: 2px;
+    padding: 2px;
+}
+.cardsNoticias {
+    font-size: .8rem;
+}
+.footerBorde {
+    background-color: #003C7B; 
+    border: #003C7B 10px solid;
+}
+.modalSuscribirme {
+    border: #ffffff solid;
+    padding: 50px; 
+    box-sizing: content-box;
+}
+.modalFormulario {
+    margin-top: 10px;
+}
+.menuHeaderSpacing {
+    text-align: right;
+}
+.menuHeaderSize {
+    font-size: 1vw;
+}
+.divLogoHeader {
+    margin-left: 5%;
+}
+.colorLogoInvertir1 {
+    color: #00C1D5;
+}
+.colorLogoInvertir2 {
+    color: #008BB0;
+}
+.colorLogoInvertir3 {
+    color: #00558C;
+}
+.colorLogoInvertir4 {
+    color: #012169;
+}
+body>div>div>div>div>div>h6 {
+    color: #00C1D5;
+}
+body>div>div>div>div>div>p {
+    color: #003B7A;
+    font-size: 1vw;
+    margin: 0px;
+}
+@media (max-width: 765px) {
+    .backgroundColorHerramientas {
+        background-color: #EEEEEE;
+        margin: #EEEEEE solid;
+    }
+    .herramientasDescripcion {
+        text-align: left;
+        font-size: 1rem;
+        color: red;
+    }
+}
+.colorFontSizeInvertir {
+    color: #EC8A00;
+}
+.colorFontSizeHerramientas {
+    color: #012169;
+}
+h3 {
+    font-size: 2vw;
+}
+body>div>div>div>div>div>div>div>p {
+    color: #003B7A;
+    font-size: 0.8vw;
+    margin: 0px;
+} 
+.fontSizeEmisiones {
+    font-size: 1vw;
+}
